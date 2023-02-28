@@ -1,5 +1,5 @@
 //
-//  CustomReminder.swift
+//  AddGoalCustomRepeat.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/18/23.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct CustomRepeat: View {
-    @Binding var goal: Goal
+struct AddGoalCustomRepeat: View {
+    @Binding var goalRepeat: GoalRepeat
     var body: some View {
         Form {
-            Picker("Frequency", selection: $goal.repeat.customRepeat) {
+            Picker("Frequency", selection: $goalRepeat.customRepeat) {
                 ForEach (GoalCustomRepeatOptions.allCases, id: \.self) { goalRepeats in
                     Text(goalRepeats.rawValue.localizedCapitalized)
                         .tag(goalRepeats.rawValue)
@@ -19,20 +19,20 @@ struct CustomRepeat: View {
             }
             DisclosureGroup {
                 HStack {
-                    Picker("Every", selection: $goal.repeat.customFrequency) {
+                    Picker("Every", selection: $goalRepeat.customFrequency) {
                         ForEach (1...999, id: \.self) { index in
                             Text(index.description)
                         }
                     }
                     .pickerStyle(.wheel)
-                    Text($goal.repeat.customRepeat.getUnitLabel(count: $goal.repeat.customFrequency).lowercased())
+                    Text(goalRepeat.customRepeat.getUnitLabel(count: goalRepeat.customFrequency).lowercased())
                         .font(.title3)
                 }
             } label: {
                 HStack {
                     Text("Every")
                     Spacer()
-                    Text($goal.repeat.customRepeat.getUnitLabelWithCount(count: $goal.repeat.customFrequency))
+                    Text(goalRepeat.customRepeat.getUnitLabelWithCount(count: goalRepeat.customFrequency))
                         .foregroundColor(.gray)
                 }
             }
@@ -42,8 +42,8 @@ struct CustomRepeat: View {
     }
 }
 
-struct CustomRepeat_Previews: PreviewProvider {
+struct AddGoalCustomRepeat_Previews: PreviewProvider {
     static var previews: some View {
-            CustomRepeat(goal: .constant(Goal.default()))
+        AddGoalCustomRepeat(goalRepeat: .constant(Goal.default().repeat))
     }
 }
