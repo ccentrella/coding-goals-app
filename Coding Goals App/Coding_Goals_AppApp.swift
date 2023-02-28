@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Coding_Goals_AppApp: App {
+    
+    @StateObject private var dataStore = DataStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GoalList()
+                .environmentObject(dataStore)
         }
     }
 }
