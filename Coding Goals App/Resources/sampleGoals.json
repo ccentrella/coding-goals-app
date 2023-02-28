@@ -1,0 +1,72 @@
+[
+    {
+        "id": "07DA2FEA-CD5D-44A1-8A68-81C19C50FAAE",
+        "description": "Read 50 pages of 'Crime and Punishment'",
+        "type": "pages",
+        "length": 50,
+        "repeat": {
+            "repeatOption": "Every Day",
+            "customFrequency": 1,
+            "customRepeat": "Weekly"
+        },
+        "deadline": {
+            "hasValue": false,
+            "date": 1687389000
+        },
+        "goalNotifications": {
+            "id": "2454F674-9626-4DEE-9C44-8C68F2FFBF24",
+            "remindMe": "1 day before",
+            "alert": "30 minutes before",
+            "showAlertBanner": true,
+            "showCongratsBanner": true
+        },
+        "notes": ""
+    },
+    {
+        "id": "C2B82524-15A7-46C2-8162-7A5B93539C56",
+        "description": "Complete 'Atomic Habits' audiobook",
+        "type": "books",
+        "length": 1,
+        "repeat": {
+            "repeatOption": "Custom",
+            "customFrequency": 5,
+            "customRepeat": "Daily"
+        },
+        "deadline": {
+            "hasValue": false,
+            "date": 1662057599
+        },
+        "goalNotifications": {
+            "id": "EAE65F1C-8518-4157-985C-65DA0B84B086",
+            "remindMe": "1 hour before",
+            "alert": "None",
+            "showAlertBanner": false,
+            "showCongratsBanner": true
+        },
+        "notes": ""
+    },
+    {
+        "id": "8762F2A7-6F25-43FE-9A9B-02C7D6A91321",
+        "description": "Create a new function in my project",
+        "type": "functions",
+        "length": 1,
+        "repeat": {
+            "repeatOption": "Custom",
+            "customFrequency": 2,
+            "customRepeat": "Weekly"
+        },
+        "deadline": {
+            "hasValue": false,
+            "date": 1708001130
+        },
+        "goalNotifications": {
+            "id": "8D369F2F-2E1C-4A34-9B31-4AF2ED4C4FF1",
+            "remindMe": "1 hour before",
+            "alert": "None",
+            "showAlertBanner": true,
+            "showCongratsBanner": false
+        },
+        "notes": ""
+    }
+]
+
