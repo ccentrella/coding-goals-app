@@ -38,7 +38,7 @@ class InspirationalMessage {
 
     static func getInspirationalMessage(goal: Goal) -> String {
         let score = getScore()
-        return score < 0.5 ? supportiveMessage() : affirmativeMessage()
+        return score >= 0.5 ? affirmativeMessage() : supportiveMessage()
     }
     
     // TODO: Implement this correctly based on progress and deadline
@@ -47,12 +47,12 @@ class InspirationalMessage {
     }
     
     private static func affirmativeMessage() -> String {
-        var randomMessageIndex = Int.random(in: 0..<affirmativeMessages.count)
+        let randomMessageIndex = Int.random(in: 0..<affirmativeMessages.count)
         return affirmativeMessages[randomMessageIndex]
     }
     
     private static func supportiveMessage() -> String {
-        var randomMessageIndex = Int.random(in: 0..<supportiveMessages.count)
+        let randomMessageIndex = Int.random(in: 0..<supportiveMessages.count)
         return supportiveMessages[randomMessageIndex]
     }
 }
