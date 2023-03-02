@@ -17,8 +17,16 @@ struct Goal: Codable, Identifiable, Hashable {
     var goalNotifications: GoalNotifications
     var notes: String
     
+    var friendlyDescription: String {
+        return description.isEmpty ? generateAutomaticDescription() : description
+    }
+    
     static func `default`() -> Goal {
         return Goal(id: UUID(), description: "", type: GoalType.pages, length: 5, repeat: GoalRepeat(repeatOption: .never, customFrequency: 1, customRepeat: .weekly), deadline: NullableDate(), goalNotifications: GoalNotifications(id: UUID(), remindMe: GoalRemindMe.none, alert: GoalAlert.none, showAlertBanner: true, showCongratsBanner: true), notes: "")
+    }
+    
+    private func generateAutomaticDescription() -> String {
+        return "\(type.getVerb()) \(length) \(type)"
     }
 }
 
