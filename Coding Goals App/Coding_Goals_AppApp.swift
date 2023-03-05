@@ -14,7 +14,7 @@ struct Coding_Goals_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            GoalList()
+            GoalListView()
                 .environmentObject(dataStore)
         }
     }

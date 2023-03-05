@@ -1,5 +1,5 @@
 //
-//  EditGoalOptions.swift
+//  GoalDetailEditOptions.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/28/23.
@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct EditGoalOptions: View {
+struct GoalDetailEditOptions: View {
     
     @Binding var data: Goal.Data
-    @Binding var path: [AddGoalPath]
     @State private var isSet = false
     
     var body: some View {
@@ -23,22 +22,14 @@ struct EditGoalOptions: View {
                 ForEach (GoalRepeatOptions.allCases, id: \.self) { goalRepeat in
                     Text(goalRepeat.rawValue)
                         .tag(goalRepeat.rawValue)
-                    if goalRepeat == GoalRepeatOptions.everyyear {
-                        Divider()
-                    }
-                }
-            }
-            .onChange(of: data.repeat.repeatOption) { _ in
-                if data.repeat.repeatOption == .custom {
-                    path.append(AddGoalPath.customRepeat)
                 }
             }
         }
     }
 }
 
-struct EditGoalOptions_Previews: PreviewProvider {
+struct GoalDetailEditOptions_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoalOptions(data: .constant(Goal.Data.default()), path: .constant([]))
+        GoalDetailEditOptions(data: .constant(Goal.Data.default()))
     }
 }

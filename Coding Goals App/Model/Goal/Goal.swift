@@ -67,7 +67,7 @@ extension Goal {
         self.goalNotifications = data.goalNotifications
         self.notes = data.notes
     }
-
+    
     mutating func update(from data: Data) {
         self.description = data.description
         self.type = data.type
@@ -76,8 +76,6 @@ extension Goal {
         self.deadline = data.deadline
         self.goalNotifications = data.goalNotifications
         self.notes = data.notes
-        //        let goalIndex = self.goals.firstIndex(of: goal)!
-        //        self.goals[goalIndex] = newValue
     }
     
     var data: Data {

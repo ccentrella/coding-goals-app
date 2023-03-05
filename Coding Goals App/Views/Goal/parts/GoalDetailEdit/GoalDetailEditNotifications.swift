@@ -1,5 +1,5 @@
 //
-//  EditGoalNotifications.swift
+//  GoalDetailEditNotifications.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/28/23.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct EditGoalNotifications: View {
+struct GoalDetailEditNotifications: View {
     
     @Binding var data: Goal.Data
+    
     var body: some View {
         Section("Notifications") {
             Picker("Remind Me", selection: $data.goalNotifications.remindMe) {
@@ -30,8 +31,8 @@ struct EditGoalNotifications: View {
     }
 }
 
-struct EditGoalNotifications_Previews: PreviewProvider {
+struct GoalDetailEditNotifications_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoalNotifications(data: .constant(Goal.Data.default()))
+        GoalDetailEditNotifications(data: .constant(Goal.Data.default()))
     }
 }

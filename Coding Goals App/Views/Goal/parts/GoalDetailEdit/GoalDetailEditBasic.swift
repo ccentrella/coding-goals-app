@@ -1,5 +1,5 @@
 //
-//  EditGoalBasic.swift
+//  GoalDetailEditBasic.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/28/23.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct EditGoalBasic: View {
+struct GoalDetailEditBasic: View {
     
     @Binding var data: Goal.Data
+    
     var body: some View {
         Section("Basic Information") {
             Stepper(value: $data.length) {
@@ -31,8 +32,8 @@ struct EditGoalBasic: View {
     }
 }
 
-struct EditGoalBasic_Previews: PreviewProvider {
+struct GoalDetailEditBasic_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoalBasic(data: .constant(Goal.Data.default()))
+        GoalDetailEditBasic(data: .constant(Goal.Data.default()))
     }
 }

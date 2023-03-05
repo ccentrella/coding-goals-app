@@ -1,5 +1,5 @@
 //
-//  EditGoal.swift
+//  GoalDetailEditView.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 3/3/23.
@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-struct EditGoal: View {
+struct GoalDetailEditView: View {
     
     @Binding var data: Goal.Data
     @Binding var isOpen: Bool
     
-    @State private var path: [AddGoalPath] = []
     let isNew: Bool
     let onSubmit: () -> Void
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             Form {
-                EditGoalBasic(data: $data)
-                EditGoalOptions(data: $data, path: $path)
-                EditGoalNotifications(data: $data)
-                EditGoalNotes(data: $data)
+                GoalDetailEditBasic(data: $data)
+                GoalDetailEditOptions(data: $data)
+                GoalDetailEditNotifications(data: $data)
+                GoalDetailEditNotes(data: $data)
             }
             .navigationTitle(isNew ? "Add Goal" : "Edit Goal")
             .navigationBarTitleDisplayMode(.inline)
@@ -43,8 +42,8 @@ struct EditGoal: View {
     }
 }
 
-struct EditGoal_Previews: PreviewProvider {
+struct GoalDetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoal(data: .constant(Goal.Data.default()), isOpen: .constant(true), isNew: false, onSubmit: {})
+        GoalDetailEditView(data: .constant(Goal.Data.default()), isOpen: .constant(true), isNew: false, onSubmit: {})
     }
 }

@@ -1,5 +1,5 @@
 //
-//  GoalList.swift
+//  GoalListView.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/18/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GoalList: View {
+struct GoalListView: View {
     
     @EnvironmentObject var store: DataStore
     @State private var path: [Goal] = []
@@ -20,7 +20,7 @@ struct GoalList: View {
                 GoalListItem(goal: goal)
             }
             .navigationDestination(for: Goal.self) { goal in
-                GoalDetail(goal: store.getBinding(goal: goal))
+                GoalDetailView(goal: store.getBinding(goal: goal))
             }
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
@@ -40,7 +40,7 @@ struct GoalList: View {
             .toolbar(.visible, for: .bottomBar)
             .navigationTitle("My Goals")
             .sheet(isPresented: $isPresentingAddView) {
-                EditGoal(data: $data, isOpen: $isPresentingAddView, isNew: true, onSubmit: {
+                GoalDetailEditView(data: $data, isOpen: $isPresentingAddView, isNew: true, onSubmit: {
                         let goal = Goal(data: data)
                         store.goals.append(goal)
                 })
@@ -49,9 +49,9 @@ struct GoalList: View {
     }
 }
 
-struct GoalList_Previews: PreviewProvider {
+struct GoalListView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalList()
+        GoalListView()
             .environmentObject(DataStore())
     }
 }
