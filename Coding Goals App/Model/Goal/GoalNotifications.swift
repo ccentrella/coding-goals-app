@@ -8,11 +8,10 @@
 import Foundation
 
 struct GoalNotifications: Codable, Hashable {
-//    var id: UUID
-    var remindMe: GoalRemindMe
-    var alert: GoalAlert
-    var showAlertBanner: Bool
-    var showCongratsBanner: Bool
+    var remindMe: GoalRemindMe = .none
+    var alert: GoalAlert = .none
+    var showAlertBanner: Bool = true
+    var showCongratsBanner: Bool = true
 }
 
 enum GoalRemindMe: String, Codable, CaseIterable {

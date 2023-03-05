@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum GoalCustomRepeatOptions: String, Codable, CaseIterable {
+    case daily = "Daily"
+    case weekly = "Weekly"
+    case monthly = "Monthly"
+    case yearly = "Yearly"
+}
+
 extension GoalCustomRepeatOptions {
     
     func getUnitLabel(count: Int) -> String {

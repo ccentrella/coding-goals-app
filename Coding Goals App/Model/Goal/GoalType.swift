@@ -2,11 +2,20 @@
 //  GoalType.swift
 //  Coding Goals App
 //
-//  Created by Christopher Centrella on 2/26/23.
+//  Created by Christopher Centrella on 3/4/23.
 //
 
 import Foundation
 import SwiftUI
+
+enum GoalType: String, Codable, CaseIterable {
+    case pages
+    case books
+    case videos
+    case functions
+    case articles
+    case apps
+}
 
 extension GoalType {
     

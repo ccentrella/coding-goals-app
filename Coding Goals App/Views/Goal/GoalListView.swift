@@ -12,7 +12,7 @@ struct GoalListView: View {
     @EnvironmentObject var store: DataStore
     @State private var path: [Goal] = []
     @State private var isPresentingAddView = false
-    @State private var data: Goal.Data = Goal.Data.default()
+    @State private var data: Goal.Data = Goal.Data()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -26,7 +26,7 @@ struct GoalListView: View {
                 ToolbarItem(placement: .bottomBar) {
                     HStack {
                         Button {
-                            data = Goal.Data.default()
+                            data = Goal.Data()
                             isPresentingAddView = true
                         } label: {
                             Label("New Goal", systemImage: "plus.circle.fill")
@@ -41,8 +41,8 @@ struct GoalListView: View {
             .navigationTitle("My Goals")
             .sheet(isPresented: $isPresentingAddView) {
                 GoalDetailEditView(data: $data, isOpen: $isPresentingAddView, isNew: true, onSubmit: {
-                        let goal = Goal(data: data)
-                        store.goals.append(goal)
+                    let goal = Goal(data: data)
+                    store.goals.append(goal)
                 })
             }
         }

@@ -12,17 +12,17 @@ class InspirationalMessage {
     
     private static let name = "Frank"
     private static let affirmativeMessages: [String] = [
-            "You're crushing it, \(name)! Keep up the amazing work!",
-            "So proud of you, \(name)! Your dedication is paying off.",
-            "You've got this, \(name)! Keep pushing through, and you'll achieve your goals.",
-            "Fantastic job, \(name)! Don't give up now.",
-            "Believe in yourself, \(name)! You have what it takes to succeed.",
-            "Making amazing progress, \(name)! Keep up the great work.",
-            "You inspire me, \(name)! Your determination is truly admirable.",
-            "Rooting for you, \(name)! Keep striving for excellence.",
-            "Outstanding job, \(name)! Keep up the momentum.",
-            "Capable of greatness, \(name)! Keep pushing yourself to new heights."
-        ]
+        "You're crushing it, \(name)! Keep up the amazing work!",
+        "So proud of you, \(name)! Your dedication is paying off.",
+        "You've got this, \(name)! Keep pushing through, and you'll achieve your goals.",
+        "Fantastic job, \(name)! Don't give up now.",
+        "Believe in yourself, \(name)! You have what it takes to succeed.",
+        "Making amazing progress, \(name)! Keep up the great work.",
+        "You inspire me, \(name)! Your determination is truly admirable.",
+        "Rooting for you, \(name)! Keep striving for excellence.",
+        "Outstanding job, \(name)! Keep up the momentum.",
+        "Capable of greatness, \(name)! Keep pushing yourself to new heights."
+    ]
     private static let supportiveMessages: [String] = [
         "You're doing great, \(name)! Remember to be kind to yourself on this journey.",
         "Believe in yourself, \(name)! You are stronger than you know, and you will overcome this.",
@@ -35,7 +35,7 @@ class InspirationalMessage {
         "It's okay to struggle, \(name)! Allow yourself to take a break and recharge when you need it.",
         "You are amazing, \(name)! Keep pushing forward, and you will emerge stronger and more resilient than ever before."
     ]
-
+    
     static func getInspirationalMessage(goal: Goal) -> String {
         let score = getScore()
         return score >= 0.5 ? affirmativeMessage() : supportiveMessage()

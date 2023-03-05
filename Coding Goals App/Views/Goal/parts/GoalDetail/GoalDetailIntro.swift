@@ -31,7 +31,7 @@ struct GoalDetailIntro: View {
 struct GoalDetailIntro_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 15) {
-            GoalDetailIntro(goal: Goal.default())
+            GoalDetailIntro(goal: Goal())
         }
         .padding()
     }

@@ -33,6 +33,6 @@ struct GoalDetailEditNotifications: View {
 
 struct GoalDetailEditNotifications_Previews: PreviewProvider {
     static var previews: some View {
-        GoalDetailEditNotifications(data: .constant(Goal.Data.default()))
+        GoalDetailEditNotifications(data: .constant(Goal.Data()))
     }
 }

@@ -11,7 +11,7 @@ struct GoalDetailView: View {
     
     @Binding var goal: Goal
     
-    @State private var data = Goal.Data.default()
+    @State private var data = Goal.Data()
     @State private var isPresentingEditView = false
     
     var body: some View {
@@ -27,10 +27,10 @@ struct GoalDetailView: View {
             }
         }
         .navigationTitle("Explore Goal")
+        .padding()
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbarBackground(goal.type.getColor(), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .padding()
         .background(goal.type.getColor())
         .foregroundColor(.white)
         .sheet(isPresented: $isPresentingEditView) {

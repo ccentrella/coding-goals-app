@@ -14,5 +14,4 @@ extension Shape {
         let goalColor = goalType.getColor()
         return self.fill(goalColor)
     }
-
 }

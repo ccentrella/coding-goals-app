@@ -34,6 +34,6 @@ struct GoalDetailEditBasic: View {
 
 struct GoalDetailEditBasic_Previews: PreviewProvider {
     static var previews: some View {
-        GoalDetailEditBasic(data: .constant(Goal.Data.default()))
+        GoalDetailEditBasic(data: .constant(Goal.Data()))
     }
 }

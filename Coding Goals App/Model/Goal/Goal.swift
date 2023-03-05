@@ -8,14 +8,14 @@
 import Foundation
 
 struct Goal: Codable, Identifiable, Hashable {
-    var id: UUID
-    var description: String
-    var type: GoalType
-    var length: Int
-    var `repeat`: GoalRepeat
-    var deadline: NullableDate
-    var goalNotifications: GoalNotifications
-    var notes: String
+    var id: UUID = UUID()
+    var description: String = ""
+    var type: GoalType = .pages
+    var length: Int = 5
+    var `repeat`: GoalRepeat = GoalRepeat()
+    var deadline: NullableDate = NullableDate()
+    var goalNotifications: GoalNotifications = GoalNotifications()
+    var notes: String = ""
     
     var friendlyDescription: String {
         return description.isEmpty ? generateAutomaticDescription() : description
@@ -23,25 +23,23 @@ struct Goal: Codable, Identifiable, Hashable {
     private func generateAutomaticDescription() -> String {
         return "\(type.getVerb()) \(length) \(type)"
     }
-    
-    static func `default`() -> Goal {
-        return Goal(id: UUID(), description: "", type: GoalType.pages, length: 5, repeat: GoalRepeat(repeatOption: .never, customFrequency: 1, customRepeat: .weekly), deadline: NullableDate(), goalNotifications: GoalNotifications(remindMe: GoalRemindMe.none, alert: GoalAlert.none, showAlertBanner: true, showCongratsBanner: true), notes: "")
-    }
 }
 
 extension Goal {
+    
     struct Data {
-        var description: String
-        var type: GoalType
-        var length: Int
-        var `repeat`: GoalRepeat
-        var deadline: NullableDate
-        var goalNotifications: GoalNotifications
-        var notes: String
-        
-        static func `default`() -> Data {
-            return Data(description: "", type: GoalType.pages, length: 5, repeat: GoalRepeat(repeatOption: .never, customFrequency: 1, customRepeat: .weekly), deadline: NullableDate(), goalNotifications: GoalNotifications(remindMe: GoalRemindMe.none, alert: GoalAlert.none, showAlertBanner: true, showCongratsBanner: true), notes: "")
-        }
+        var description: String = ""
+        var type: GoalType = .pages
+        var length: Int = 5
+        var `repeat`: GoalRepeat = GoalRepeat()
+        var deadline: NullableDate = NullableDate()
+        var goalNotifications: GoalNotifications = GoalNotifications()
+        var notes: String = ""
+    }
+    var data: Data {
+        Data(description: description, type: type, length: length,
+             repeat: `repeat`, deadline: deadline,
+             goalNotifications: goalNotifications, notes: notes)
     }
     
     init(data: Data)
@@ -65,17 +63,4 @@ extension Goal {
         self.goalNotifications = data.goalNotifications
         self.notes = data.notes
     }
-    
-    var data: Data {
-        Data(description: description, type: type, length: length, repeat: `repeat`, deadline: deadline, goalNotifications: goalNotifications, notes: notes)
-    }
-}
-
-enum GoalType: String, Codable, CaseIterable {
-    case pages
-    case books
-    case videos
-    case functions
-    case articles
-    case apps
 }

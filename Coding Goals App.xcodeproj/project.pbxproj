@@ -10,8 +10,6 @@
 		C334E5B829A984BD00283217 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C334E5B729A984BD00283217 /* Image.swift */; };
 		C334E5BA29A9910A00283217 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C334E5B929A9910900283217 /* Shape.swift */; };
 		C34D92F929B2AFE2006D979C /* GoalDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34D92F829B2AFE2006D979C /* GoalDetailEditView.swift */; };
-		C358E2A929AD9D1700217EBB /* AddGoalPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2A829AD9D1700217EBB /* AddGoalPath.swift */; };
-		C358E2AB29ADA5D600217EBB /* GoalCustomRepeatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2AA29ADA5D600217EBB /* GoalCustomRepeatOptions.swift */; };
 		C358E2B329AECA3C00217EBB /* GoalDetailEditOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B229AECA3C00217EBB /* GoalDetailEditOptions.swift */; };
 		C358E2B529AECB4B00217EBB /* GoalDetailEditBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B429AECB4B00217EBB /* GoalDetailEditBasic.swift */; };
 		C358E2B729AECC4B00217EBB /* GoalDetailEditNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B629AECC4B00217EBB /* GoalDetailEditNotifications.swift */; };
@@ -20,7 +18,6 @@
 		C373D08529B0381000117C62 /* GoalDetailBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D08429B0381000117C62 /* GoalDetailBody.swift */; };
 		C3B92C6429A0632C003A8C74 /* Coding_Goals_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C6329A0632C003A8C74 /* Coding_Goals_AppApp.swift */; };
 		C3B92C6829A0632D003A8C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B92C6729A0632D003A8C74 /* Assets.xcassets */; };
-		C3B92C6C29A0632D003A8C74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B92C6B29A0632D003A8C74 /* Preview Assets.xcassets */; };
 		C3B92C7629A0632D003A8C74 /* Coding_Goals_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C7529A0632D003A8C74 /* Coding_Goals_AppTests.swift */; };
 		C3B92C8029A0632D003A8C74 /* Coding_Goals_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C7F29A0632D003A8C74 /* Coding_Goals_AppUITests.swift */; };
 		C3B92C8229A0632D003A8C74 /* Coding_Goals_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C8129A0632D003A8C74 /* Coding_Goals_AppUITestsLaunchTests.swift */; };
@@ -32,7 +29,6 @@
 		C3B92C9C29A167C6003A8C74 /* GoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C9B29A167C6003A8C74 /* GoalListView.swift */; };
 		C3B92C9F29A167F4003A8C74 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C9E29A167F4003A8C74 /* GoalDetailView.swift */; };
 		C3B92CA329A1681B003A8C74 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CA229A1681B003A8C74 /* BannerView.swift */; };
-		C3B92CA529A16827003A8C74 /* EditGoalCustomRepeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CA429A16827003A8C74 /* EditGoalCustomRepeat.swift */; };
 		C3B92CA829A16858003A8C74 /* AlertBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CA729A16858003A8C74 /* AlertBanner.swift */; };
 		C3B92CAA29A1689C003A8C74 /* CongratsBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */; };
 		C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */; };
@@ -41,7 +37,8 @@
 		C3D82DF929AA7C0D00A3BBB9 /* InspirationalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */; };
 		C3D82DFC29AC170800A3BBB9 /* GoalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */; };
 		C3D82DFE29AC20F100A3BBB9 /* NullableDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DFD29AC20F100A3BBB9 /* NullableDate.swift */; };
-		C3D82E0329AC4F0400A3BBB9 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82E0229AC4F0400A3BBB9 /* GoalType.swift */; };
+		C3F1C67C29B41E0F00F0A62B /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67B29B41E0F00F0A62B /* GoalType.swift */; };
+		C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +62,6 @@
 		C334E5B729A984BD00283217 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		C334E5B929A9910900283217 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		C34D92F829B2AFE2006D979C /* GoalDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalDetailEditView.swift; path = "Coding Goals App/Views/Goal/GoalDetailEditView.swift"; sourceTree = SOURCE_ROOT; };
-		C358E2A829AD9D1700217EBB /* AddGoalPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalPath.swift; sourceTree = "<group>"; };
-		C358E2AA29ADA5D600217EBB /* GoalCustomRepeatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCustomRepeatOptions.swift; sourceTree = "<group>"; };
 		C358E2B229AECA3C00217EBB /* GoalDetailEditOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditOptions.swift; sourceTree = "<group>"; };
 		C358E2B429AECB4B00217EBB /* GoalDetailEditBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditBasic.swift; sourceTree = "<group>"; };
 		C358E2B629AECC4B00217EBB /* GoalDetailEditNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditNotifications.swift; sourceTree = "<group>"; };
@@ -91,7 +86,6 @@
 		C3B92C9B29A167C6003A8C74 /* GoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListView.swift; sourceTree = "<group>"; };
 		C3B92C9E29A167F4003A8C74 /* GoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
 		C3B92CA229A1681B003A8C74 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		C3B92CA429A16827003A8C74 /* EditGoalCustomRepeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalCustomRepeat.swift; sourceTree = "<group>"; };
 		C3B92CA729A16858003A8C74 /* AlertBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBanner.swift; sourceTree = "<group>"; };
 		C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsBanner.swift; sourceTree = "<group>"; };
 		C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroBanner.swift; sourceTree = "<group>"; };
@@ -100,7 +94,8 @@
 		C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalMessage.swift; sourceTree = "<group>"; };
 		C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalHistory.swift; sourceTree = "<group>"; };
 		C3D82DFD29AC20F100A3BBB9 /* NullableDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullableDate.swift; sourceTree = "<group>"; };
-		C3D82E0229AC4F0400A3BBB9 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
+		C3F1C67B29B41E0F00F0A62B /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
+		C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCustomRepeatOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +140,6 @@
 			children = (
 				C334E5B729A984BD00283217 /* Image.swift */,
 				C334E5B929A9910900283217 /* Shape.swift */,
-				C3D82E0229AC4F0400A3BBB9 /* GoalType.swift */,
-				C358E2AA29ADA5D600217EBB /* GoalCustomRepeatOptions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,11 +255,7 @@
 		C3B92CA629A1683F003A8C74 /* Banners */ = {
 			isa = PBXGroup;
 			children = (
-				C3B92CA229A1681B003A8C74 /* BannerView.swift */,
-				C3B92CA729A16858003A8C74 /* AlertBanner.swift */,
-				C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */,
-				C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */,
-				C3B92CAD29A168F7003A8C74 /* OverviewBanner.swift */,
+				C3F1C68129B4280C00F0A62B /* future-release */,
 			);
 			path = Banners;
 			sourceTree = "<group>";
@@ -290,10 +279,11 @@
 		C3D82DFF29AC215500A3BBB9 /* Goal */ = {
 			isa = PBXGroup;
 			children = (
+				C3F1C67E29B4229400F0A62B /* future-release */,
 				C3B92C9029A06529003A8C74 /* Goal.swift */,
 				C3B92C9229A068D8003A8C74 /* GoalRepeat.swift */,
 				C3B92C9429A0698B003A8C74 /* GoalNotifications.swift */,
-				C358E2A829AD9D1700217EBB /* AddGoalPath.swift */,
+				C3F1C67B29B41E0F00F0A62B /* GoalType.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -302,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */,
-				C3F1C67929B41A4700F0A62B /* parts */,
 			);
 			path = "future-release";
 			sourceTree = "<group>";
@@ -317,20 +306,24 @@
 			path = parts;
 			sourceTree = "<group>";
 		};
-		C3F1C67929B41A4700F0A62B /* parts */ = {
+		C3F1C67E29B4229400F0A62B /* future-release */ = {
 			isa = PBXGroup;
 			children = (
-				C3F1C67A29B41A4E00F0A62B /* EditGoal */,
+				C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */,
 			);
-			path = parts;
+			path = "future-release";
 			sourceTree = "<group>";
 		};
-		C3F1C67A29B41A4E00F0A62B /* EditGoal */ = {
+		C3F1C68129B4280C00F0A62B /* future-release */ = {
 			isa = PBXGroup;
 			children = (
-				C3B92CA429A16827003A8C74 /* EditGoalCustomRepeat.swift */,
+				C3B92CA229A1681B003A8C74 /* BannerView.swift */,
+				C3B92CA729A16858003A8C74 /* AlertBanner.swift */,
+				C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */,
+				C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */,
+				C3B92CAD29A168F7003A8C74 /* OverviewBanner.swift */,
 			);
-			path = EditGoal;
+			path = "future-release";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,7 +431,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B92C9A29A161D8003A8C74 /* sampleGoals.json in Resources */,
-				C3B92C6C29A0632D003A8C74 /* Preview Assets.xcassets in Resources */,
 				C3B92C6829A0632D003A8C74 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B92C9F29A167F4003A8C74 /* GoalDetailView.swift in Sources */,
+				C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */,
 				C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */,
 				C34D92F929B2AFE2006D979C /* GoalDetailEditView.swift in Sources */,
 				C3B92C9C29A167C6003A8C74 /* GoalListView.swift in Sources */,
@@ -473,23 +466,20 @@
 				C3B92CA829A16858003A8C74 /* AlertBanner.swift in Sources */,
 				C358E2B329AECA3C00217EBB /* GoalDetailEditOptions.swift in Sources */,
 				C3B92CA329A1681B003A8C74 /* BannerView.swift in Sources */,
-				C3D82E0329AC4F0400A3BBB9 /* GoalType.swift in Sources */,
 				C358E2B529AECB4B00217EBB /* GoalDetailEditBasic.swift in Sources */,
 				C3B92C9129A06529003A8C74 /* Goal.swift in Sources */,
 				C334E5B829A984BD00283217 /* Image.swift in Sources */,
 				C3B92C6429A0632C003A8C74 /* Coding_Goals_AppApp.swift in Sources */,
 				C3B92CAA29A1689C003A8C74 /* CongratsBanner.swift in Sources */,
-				C3B92CA529A16827003A8C74 /* EditGoalCustomRepeat.swift in Sources */,
 				C3D82DFC29AC170800A3BBB9 /* GoalHistory.swift in Sources */,
 				C3B92CAE29A168F7003A8C74 /* OverviewBanner.swift in Sources */,
 				C373D08529B0381000117C62 /* GoalDetailBody.swift in Sources */,
 				C3CB923E29B01C950019AD0A /* GoalListItem.swift in Sources */,
-				C358E2AB29ADA5D600217EBB /* GoalCustomRepeatOptions.swift in Sources */,
 				C3B92C9529A0698B003A8C74 /* GoalNotifications.swift in Sources */,
 				C358E2B729AECC4B00217EBB /* GoalDetailEditNotifications.swift in Sources */,
-				C358E2A929AD9D1700217EBB /* AddGoalPath.swift in Sources */,
 				C3D82DFE29AC20F100A3BBB9 /* NullableDate.swift in Sources */,
 				C3B92C9329A068D8003A8C74 /* GoalRepeat.swift in Sources */,
+				C3F1C67C29B41E0F00F0A62B /* GoalType.swift in Sources */,
 				C358E2B929AECC8700217EBB /* GoalDetailEditNotes.swift in Sources */,
 				C373D08329B0379C00117C62 /* GoalDetailIntro.swift in Sources */,
 				C3D82DF929AA7C0D00A3BBB9 /* InspirationalMessage.swift in Sources */,

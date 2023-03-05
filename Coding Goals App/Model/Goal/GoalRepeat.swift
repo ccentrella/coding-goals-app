@@ -7,10 +7,9 @@
 
 import Foundation
 
+// Model exists to enable extension of repeat functionality
 struct GoalRepeat: Codable, Hashable {
-    var repeatOption: GoalRepeatOptions
-    var customFrequency: Int
-    var customRepeat: GoalCustomRepeatOptions
+    var repeatOption: GoalRepeatOptions = .never
 }
 
 enum GoalRepeatOptions: String, Codable, CaseIterable {
@@ -20,12 +19,4 @@ enum GoalRepeatOptions: String, Codable, CaseIterable {
     case everytwoweeks = "Every Two Weeks"
     case everymonth = "Every Month"
     case everyyear = "Every Year"
-    case custom = "Custom"
-}
-
-enum GoalCustomRepeatOptions: String, Codable, CaseIterable {
-    case daily = "Daily"
-    case weekly = "Weekly"
-    case monthly = "Monthly"
-    case yearly = "Yearly"
 }

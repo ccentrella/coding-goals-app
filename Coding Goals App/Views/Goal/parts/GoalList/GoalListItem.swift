@@ -38,7 +38,7 @@ struct GoalListItem: View {
 
 struct GoalListItem_Previews: PreviewProvider {
     static var previews: some View {
-        GoalListItem(goal: Goal.default())
+        GoalListItem(goal: Goal())
             .environmentObject(DataStore())
     }
 }

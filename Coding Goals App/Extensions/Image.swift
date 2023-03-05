@@ -14,7 +14,6 @@ extension Image {
         let systemName = Image.getSystemImageName(goalType: goalType)
         self.init(systemName: systemName)
     }
-
     private static func getSystemImageName(goalType: GoalType) -> String {
         switch (goalType) {
         case .pages:
