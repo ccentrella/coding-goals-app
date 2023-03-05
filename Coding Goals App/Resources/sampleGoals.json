@@ -5,9 +5,7 @@
         "type": "pages",
         "length": 50,
         "repeat": {
-            "repeatOption": "Every Day",
-            "customFrequency": 1,
-            "customRepeat": "Weekly"
+            "repeatOption": "Every Day"
         },
         "deadline": {
             "hasValue": false,
@@ -28,9 +26,7 @@
         "type": "books",
         "length": 1,
         "repeat": {
-            "repeatOption": "Custom",
-            "customFrequency": 5,
-            "customRepeat": "Daily"
+            "repeatOption": "Never"
         },
         "deadline": {
             "hasValue": false,
@@ -51,9 +47,7 @@
         "type": "functions",
         "length": 1,
         "repeat": {
-            "repeatOption": "Custom",
-            "customFrequency": 2,
-            "customRepeat": "Weekly"
+            "repeatOption": "Never"
         },
         "deadline": {
             "hasValue": false,
