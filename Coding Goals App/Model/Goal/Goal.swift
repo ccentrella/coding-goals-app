@@ -17,18 +17,6 @@ struct Goal: Codable, Identifiable, Hashable {
     var goalNotifications: GoalNotifications
     var notes: String
     
-    init(id: UUID, description: String, type: GoalType, length: Int, repeat: GoalRepeat, deadline: NullableDate, goalNotifications: GoalNotifications, notes: String)
-    {
-        self.id = id
-        self.description = description
-        self.type = type
-        self.length = length
-        self.repeat = `repeat`
-        self.deadline = deadline
-        self.goalNotifications = goalNotifications
-        self.notes = notes
-    }
-    
     var friendlyDescription: String {
         return description.isEmpty ? generateAutomaticDescription() : description
     }
