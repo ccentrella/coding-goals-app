@@ -9,7 +9,11 @@ import SwiftUI
 
 struct GoalDetail: View {
     
-    let goal: Goal
+    @Binding var goal: Goal
+    
+    @State private var data = Goal.Data.default()
+    @State private var isPresentingEditView = false
+    
     var body: some View {
         VStack(spacing: 15) {
             GoalDetailIntro(goal: goal)
@@ -17,7 +21,10 @@ struct GoalDetail: View {
             Spacer()
         }
         .toolbar {
-            EditButton()
+            Button("Edit") {
+                isPresentingEditView = true
+                data = goal.data
+            }
         }
         .navigationTitle("Explore Goal")
         .toolbarColorScheme(.dark, for: .navigationBar)
@@ -26,6 +33,11 @@ struct GoalDetail: View {
         .padding()
         .background(goal.type.getColor())
         .foregroundColor(.white)
+        .sheet(isPresented: $isPresentingEditView) {
+            EditGoal(data: $data, isOpen: $isPresentingEditView, isNew: false, onSubmit: {
+                goal.update(from: data)
+            })
+        }
     }
 }
 
@@ -34,7 +46,7 @@ struct GoalDetail_Previews: PreviewProvider {
         let dataStore = DataStore()
         
         NavigationStack {
-            GoalDetail(goal: dataStore.goals[0])
+            GoalDetail(goal: .constant(dataStore.goals[0]))
                 .environmentObject(dataStore)
         }
     }

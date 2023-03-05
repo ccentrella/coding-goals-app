@@ -6,9 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
 
 public final class DataStore: ObservableObject {
     @Published var goals: [Goal] = load("sampleGoals.json")
+    
+    func getBinding(goal: Goal) -> Binding<Goal> {
+        return Binding<Goal> {
+            goal
+        } set: { newValue in
+            let goalIndex = self.goals.firstIndex(of: goal)!
+            self.goals[goalIndex] = newValue
+        }
+    }
 }
 
 func load<T: Decodable> (_ filename: String) -> T {

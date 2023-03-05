@@ -1,5 +1,5 @@
 //
-//  AddGoalCustomRepeat.swift
+//  EditGoalCustomRepeat.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/18/23.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct AddGoalCustomRepeat: View {
+struct EditGoalCustomRepeat: View {
+    
     @Binding var goalRepeat: GoalRepeat
     var body: some View {
         Form {
@@ -42,8 +43,8 @@ struct AddGoalCustomRepeat: View {
     }
 }
 
-struct AddGoalCustomRepeat_Previews: PreviewProvider {
+struct EditGoalCustomRepeat_Previews: PreviewProvider {
     static var previews: some View {
-        AddGoalCustomRepeat(goalRepeat: .constant(Goal.default().repeat))
+        EditGoalCustomRepeat(goalRepeat: .constant(Goal.Data.default().repeat))
     }
 }

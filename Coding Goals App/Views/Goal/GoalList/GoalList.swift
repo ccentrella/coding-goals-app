@@ -11,7 +11,8 @@ struct GoalList: View {
     
     @EnvironmentObject var store: DataStore
     @State private var path: [Goal] = []
-    @State private var addItem = false
+    @State private var isPresentingAddView = false
+    @State private var data: Goal.Data = Goal.Data.default()
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -19,13 +20,14 @@ struct GoalList: View {
                 GoalListItem(goal: goal)
             }
             .navigationDestination(for: Goal.self) { goal in
-                GoalDetail(goal: goal)
+                GoalDetail(goal: store.getBinding(goal: goal))
             }
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     HStack {
                         Button {
-                            addItem = true
+                            data = Goal.Data.default()
+                            isPresentingAddView = true
                         } label: {
                             Label("New Goal", systemImage: "plus.circle.fill")
                                 .bold()
@@ -37,8 +39,11 @@ struct GoalList: View {
             }
             .toolbar(.visible, for: .bottomBar)
             .navigationTitle("My Goals")
-            .sheet(isPresented: $addItem) {
-                AddGoal(isOpen: $addItem)
+            .sheet(isPresented: $isPresentingAddView) {
+                EditGoal(data: $data, isOpen: $isPresentingAddView, isNew: true, onSubmit: {
+                        let goal = Goal(data: data)
+                        store.goals.append(goal)
+                })
             }
         }
     }

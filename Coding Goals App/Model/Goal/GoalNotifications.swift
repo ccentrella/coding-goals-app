@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct GoalNotifications: Codable, Identifiable, Hashable {
-    var id: UUID
+struct GoalNotifications: Codable, Hashable {
+//    var id: UUID
     var remindMe: GoalRemindMe
     var alert: GoalAlert
     var showAlertBanner: Bool
