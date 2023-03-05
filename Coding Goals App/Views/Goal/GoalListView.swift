@@ -16,13 +16,26 @@ struct GoalListView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            List (store.goals) { goal in
-                GoalListItem(goal: goal)
+            List {
+                
+                if store.goals.count == 0 {
+                    Text("Welcome! Begin by creating a goal.")
+                }
+                
+                ForEach (store.goals) { goal in
+                    GoalListItem(goal: goal)
+                }
+                .onDelete { offsets in
+                    store.goals.remove(atOffsets: offsets)
+                }
             }
             .navigationDestination(for: Goal.self) { goal in
                 GoalDetailView(goal: store.getBinding(goal: goal))
             }
             .toolbar {
+                ToolbarItem {
+                    EditButton()
+                }
                 ToolbarItem(placement: .bottomBar) {
                     HStack {
                         Button {
