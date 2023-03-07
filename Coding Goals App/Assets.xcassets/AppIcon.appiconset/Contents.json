@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "logo_white@4x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -31,26 +32,31 @@
       "size" : "128x128"
     },
     {
+      "filename" : "logo_white.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
+      "filename" : "logo_white 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
+      "filename" : "logo_white@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
+      "filename" : "logo_white@2x 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "logo_white@4x 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
