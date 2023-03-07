@@ -13,9 +13,9 @@ public final class DataStore: ObservableObject {
     
     func getBinding(goal: Goal) -> Binding<Goal> {
         return Binding<Goal> {
-            goal
+            return self.goals.first(where: { iterator in iterator.id == goal.id })!
         } set: { newValue in
-            let goalIndex = self.goals.firstIndex(of: goal)!
+            let goalIndex = self.goals.firstIndex(where: { iterator in iterator.id == goal.id })!
             self.goals[goalIndex] = newValue
         }
     }
