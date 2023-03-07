@@ -11,10 +11,10 @@ struct GoalDetailBody: View {
     
     let goal: Goal
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             if goal.deadline.hasValue {
-                Label("Due", systemImage: "clock")
-                Text(goal.deadline.date.description)
+                Image(systemName: "clock")
+                Text("Due \(goal.deadline.date.formatted(date: .complete, time: .shortened))")
             }
             else {
                 Label("No deadline specified", systemImage: "clock")
