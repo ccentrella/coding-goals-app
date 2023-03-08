@@ -41,9 +41,13 @@ struct OverviewBanner: BannerView {
                     Spacer()
                     Button(action: {}) {
                         Text("Update")
-                            .padding(.all, 10.0)
+                            .padding(.all, 18.0)
+                            .padding(.horizontal, 7.0)
+                            .background(goal.type.getColor())
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(.plain)
                 }
             }
             .padding(28.0)
