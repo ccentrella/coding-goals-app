@@ -16,6 +16,8 @@
 		C358E2B929AECC8700217EBB /* GoalDetailEditNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B829AECC8700217EBB /* GoalDetailEditNotes.swift */; };
 		C373D08329B0379C00117C62 /* GoalDetailIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D08229B0379C00117C62 /* GoalDetailIntro.swift */; };
 		C373D08529B0381000117C62 /* GoalDetailBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D08429B0381000117C62 /* GoalDetailBody.swift */; };
+		C391461F29B8053C00B15340 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391461E29B8053C00B15340 /* NotificationService.swift */; };
+		C391462329B81D2700B15340 /* GoalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391462229B81D2700B15340 /* GoalStatus.swift */; };
 		C3B92C6429A0632C003A8C74 /* Coding_Goals_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C6329A0632C003A8C74 /* Coding_Goals_AppApp.swift */; };
 		C3B92C6829A0632D003A8C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B92C6729A0632D003A8C74 /* Assets.xcassets */; };
 		C3B92C7629A0632D003A8C74 /* Coding_Goals_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C7529A0632D003A8C74 /* Coding_Goals_AppTests.swift */; };
@@ -68,6 +70,8 @@
 		C358E2B829AECC8700217EBB /* GoalDetailEditNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditNotes.swift; sourceTree = "<group>"; };
 		C373D08229B0379C00117C62 /* GoalDetailIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailIntro.swift; sourceTree = "<group>"; };
 		C373D08429B0381000117C62 /* GoalDetailBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailBody.swift; sourceTree = "<group>"; };
+		C391461E29B8053C00B15340 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C391462229B81D2700B15340 /* GoalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStatus.swift; sourceTree = "<group>"; };
 		C3B92C6029A0632C003A8C74 /* Coding Goals App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coding Goals App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B92C6329A0632C003A8C74 /* Coding_Goals_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coding_Goals_AppApp.swift; sourceTree = "<group>"; };
 		C3B92C6729A0632D003A8C74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */,
+				C391461E29B8053C00B15340 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				C3B92C9229A068D8003A8C74 /* GoalRepeat.swift */,
 				C3B92C9429A0698B003A8C74 /* GoalNotifications.swift */,
 				C3F1C67B29B41E0F00F0A62B /* GoalType.swift */,
+				C391462229B81D2700B15340 /* GoalStatus.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C391462329B81D2700B15340 /* GoalStatus.swift in Sources */,
 				C3B92C9F29A167F4003A8C74 /* GoalDetailView.swift in Sources */,
 				C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */,
 				C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */,
@@ -472,6 +479,7 @@
 				C3B92C6429A0632C003A8C74 /* Coding_Goals_AppApp.swift in Sources */,
 				C3B92CAA29A1689C003A8C74 /* CongratsBanner.swift in Sources */,
 				C3D82DFC29AC170800A3BBB9 /* GoalHistory.swift in Sources */,
+				C391461F29B8053C00B15340 /* NotificationService.swift in Sources */,
 				C3B92CAE29A168F7003A8C74 /* OverviewBanner.swift in Sources */,
 				C373D08529B0381000117C62 /* GoalDetailBody.swift in Sources */,
 				C3CB923E29B01C950019AD0A /* GoalListItem.swift in Sources */,
