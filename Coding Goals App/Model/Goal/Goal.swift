@@ -16,6 +16,7 @@ struct Goal: Codable, Identifiable, Hashable {
     var deadline: NullableDate = NullableDate()
     var goalNotifications: GoalNotifications = GoalNotifications()
     var notes: String = ""
+    var status: GoalStatus = GoalStatus()
     
     var friendlyDescription: String {
         return description.isEmpty ? generateAutomaticDescription() : description
@@ -52,6 +53,7 @@ extension Goal {
         self.deadline = data.deadline
         self.goalNotifications = data.goalNotifications
         self.notes = data.notes
+        self.status = GoalStatus()
     }
     
     mutating func update(from data: Data) {

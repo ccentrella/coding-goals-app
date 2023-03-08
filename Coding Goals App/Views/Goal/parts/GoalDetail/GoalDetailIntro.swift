@@ -12,7 +12,7 @@ struct GoalDetailIntro: View {
     let goal: Goal
     var body: some View {
         VStack (alignment: .leading) {
-            OverviewBanner(goal: goal, description: "20 pages left", progress: 0.35, onUpdate: {})
+            OverviewBanner(goal: goal)
                 .padding(.bottom, 20.0)
             Text("Goal: \(goal.friendlyDescription)")
                 .font(.callout)
