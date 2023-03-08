@@ -11,20 +11,13 @@ struct GoalDetailIntro: View {
     
     let goal: Goal
     var body: some View {
-        HStack(spacing: 15) {
-            ZStack {
-                Circle()
-                    .frame(height: 60)
-                Image(goalType: goal.type)
-                    .foregroundColor(goal.type.getColor())
-            }
-            Text(goal.friendlyDescription)
+        VStack (alignment: .leading) {
+            OverviewBanner(goal: goal, description: "20 pages left", progress: 0.35, onUpdate: {})
+                .padding(.bottom, 20.0)
+            Text("Goal: \(goal.friendlyDescription)")
+                .font(.callout)
                 .bold()
-            Spacer()
         }
-        .font(.system(.title2))
-        .padding(.top, 5.0)
-        .padding(.bottom, 10.0)
     }
 }
 
