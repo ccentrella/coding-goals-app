@@ -37,6 +37,7 @@ struct OverviewBanner: BannerView {
                         Text(goal.status.progressPercent)
                     }
                     .gaugeStyle(.accessoryCircularCapacity)
+                    .colorScheme(.light)
                     Spacer()
                     Button(action: {}) {
                         Text("Update")
