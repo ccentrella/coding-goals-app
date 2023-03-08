@@ -18,7 +18,11 @@
             "showAlertBanner": true,
             "showCongratsBanner": true
         },
-        "notes": ""
+        "notes": "",
+        "status": {
+            "progressValue": 0.5,
+            "progressMessage": "25 pages left to read"
+        }
     },
     {
         "id": "C2B82524-15A7-46C2-8162-7A5B93539C56",
@@ -39,7 +43,11 @@
             "showAlertBanner": false,
             "showCongratsBanner": true
         },
-        "notes": ""
+        "notes": "",
+        "status": {
+            "progressValue": 0.6,
+            "progressMessage": "40 percent left to read"
+        }
     },
     {
         "id": "8762F2A7-6F25-43FE-9A9B-02C7D6A91321",
@@ -60,7 +68,11 @@
             "showAlertBanner": true,
             "showCongratsBanner": false
         },
-        "notes": ""
+        "notes": "",
+        "status": {
+            "progressValue": 0.25,
+            "progressMessage": "75% more to go"
+        }
     }
 ]
  
