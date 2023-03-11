@@ -10,6 +10,8 @@ import SwiftUI
 struct OverviewBanner: BannerView {
     
     let goal: Goal
+    let onClick: () -> Void
+    
     var body: some View {
         ZStack {
             VStack(spacing: 10.0) {
@@ -24,7 +26,7 @@ struct OverviewBanner: BannerView {
                         Text("At A Glance")
                             .font(.title2)
                             .bold()
-                        Text(goal.status.progressMessage)
+                        Text(GoalStatusHelper.getProgressMessage(goal: goal))
                             .font(.callout)
                             .bold()
                             .padding(.bottom, 25.0)
@@ -33,13 +35,13 @@ struct OverviewBanner: BannerView {
                     Spacer()
                 }
                 HStack {
-                    Gauge(value: goal.status.progressValue, in: /*@START_MENU_TOKEN@*/0...1/*@END_MENU_TOKEN@*/) {
-                        Text(goal.status.progressPercent)
+                    Gauge(value: goal.status.progress, in: /*@START_MENU_TOKEN@*/0...1/*@END_MENU_TOKEN@*/) {
+                        Text(goal.status.progressPercent.description)
                     }
                     .gaugeStyle(.accessoryCircularCapacity)
                     .colorScheme(.light)
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: { onClick() }) {
                         Text("Update")
                             .padding(.all, 18.0)
                             .padding(.horizontal, 7.0)
@@ -61,6 +63,6 @@ struct OverviewBanner: BannerView {
 
 struct OverviewBanner_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewBanner(goal: Goal())
+        OverviewBanner(goal: Goal(), onClick: {})
     }
 }

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct GoalDetailIntro: View {
     
+    @Binding var isPresentingUpdateView: Bool
+    
     let goal: Goal
     var body: some View {
         VStack (alignment: .leading) {
-            OverviewBanner(goal: goal)
+            OverviewBanner(goal: goal, onClick: { isPresentingUpdateView = true })
                 .padding(.bottom, 20.0)
             Text("Goal: \(goal.friendlyDescription)")
                 .font(.callout)
@@ -24,7 +26,7 @@ struct GoalDetailIntro: View {
 struct GoalDetailIntro_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 15) {
-            GoalDetailIntro(goal: Goal())
+            GoalDetailIntro(isPresentingUpdateView: .constant(false), goal: Goal())
         }
         .padding()
     }

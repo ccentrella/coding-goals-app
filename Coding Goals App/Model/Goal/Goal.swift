@@ -11,7 +11,11 @@ struct Goal: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var description: String = ""
     var type: GoalType = .pages
-    var length: Int = 5
+    var length: Int = 5 {
+        willSet {
+            self.status.updateTotal(newValue)
+        }
+    }
     var `repeat`: GoalRepeat = GoalRepeat()
     var deadline: NullableDate = NullableDate()
     var goalNotifications: GoalNotifications = GoalNotifications()
@@ -24,6 +28,7 @@ struct Goal: Codable, Identifiable, Hashable {
     private func generateAutomaticDescription() -> String {
         return "\(type.getVerb()) \(length) \(type)"
     }
+
 }
 
 extension Goal {
@@ -53,7 +58,7 @@ extension Goal {
         self.deadline = data.deadline
         self.goalNotifications = data.goalNotifications
         self.notes = data.notes
-        self.status = GoalStatus()
+        self.status = GoalStatus(totalEntries: length)
     }
     
     mutating func update(from data: Data) {

@@ -13,10 +13,11 @@ struct GoalDetailView: View {
     
     @State private var data = Goal.Data()
     @State private var isPresentingEditView = false
+    @State private var isPresentingUpdateView = false
     
     var body: some View {
         VStack(spacing: 15) {
-            GoalDetailIntro(goal: goal)
+            GoalDetailIntro(isPresentingUpdateView: $isPresentingUpdateView, goal: goal)
             GoalDetailBody(goal: goal)
             Spacer()
         }
@@ -37,6 +38,11 @@ struct GoalDetailView: View {
             GoalDetailEditView(data: $data, isOpen: $isPresentingEditView, isNew: false, onSubmit: {
                 goal.update(from: data)
             })
+        }
+        .sheet(isPresented: $isPresentingUpdateView) {
+            GoalUpdateView(status: $goal.status)
+                .presentationDetents([.height(250)])
+                .presentationDragIndicator(.visible)
         }
     }
 }
