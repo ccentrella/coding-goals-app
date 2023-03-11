@@ -20,8 +20,9 @@
         },
         "notes": "",
         "status": {
-            "progressValue": 0.5,
-            "progressMessage": "25 pages left to read"
+            "entriesCompleted": 25,
+            "totalEntries": 50,
+            "isPercent": false
         }
     },
     {
@@ -45,8 +46,9 @@
         },
         "notes": "",
         "status": {
-            "progressValue": 0.6,
-            "progressMessage": "40 percent left to read"
+            "entriesCompleted": 6,
+            "totalEntries": 100,
+            "isPercent": true
         }
     },
     {
@@ -70,8 +72,9 @@
         },
         "notes": "",
         "status": {
-            "progressValue": 0.25,
-            "progressMessage": "75% more to go"
+            "entriesCompleted": 25,
+            "totalEntries": 100,
+            "isPercent": true
         }
     }
 ]
