@@ -21,7 +21,7 @@ struct GoalUpdateView: View {
                 }
             }
             else {
-                Stepper(value: $goal.status.entriesCompleted) {
+                Stepper(value: $goal.status.entriesCompleted, in: 0...goal.status.totalEntries) {
                     HStack {
                         Text("Completed:")
                         Spacer()
