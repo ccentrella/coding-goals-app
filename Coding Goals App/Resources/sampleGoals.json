@@ -11,7 +11,7 @@
             "hasValue": false,
             "date": 1687389000
         },
-        "goalNotifications": {
+        "notifications": {
             "id": "2454F674-9626-4DEE-9C44-8C68F2FFBF24",
             "remindMe": "1 day before",
             "alert": "30 minutes before",
@@ -38,7 +38,7 @@
             "hasValue": false,
             "date": 1662057599
         },
-        "goalNotifications": {
+        "notifications": {
             "id": "EAE65F1C-8518-4157-985C-65DA0B84B086",
             "remindMe": "1 hour before",
             "alert": "None",
@@ -65,7 +65,7 @@
             "hasValue": false,
             "date": 1708001130
         },
-        "goalNotifications": {
+        "notifications": {
             "id": "8D369F2F-2E1C-4A34-9B31-4AF2ED4C4FF1",
             "remindMe": "1 hour before",
             "alert": "None",

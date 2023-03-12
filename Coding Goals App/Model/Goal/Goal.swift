@@ -18,7 +18,7 @@ struct Goal: Codable, Identifiable, Hashable {
     }
     var `repeat`: GoalRepeat = GoalRepeat()
     var deadline: NullableDate = NullableDate()
-    var goalNotifications: GoalNotifications = GoalNotifications()
+    var notifications: GoalNotifications = GoalNotifications()
     var notes: String = ""
     var status: GoalStatus = GoalStatus()
     
@@ -45,7 +45,7 @@ extension Goal {
     var data: Data {
         Data(description: description, type: type, length: length,
              repeat: `repeat`, deadline: deadline,
-             goalNotifications: goalNotifications, notes: notes)
+             goalNotifications: notifications, notes: notes)
     }
     
     init(data: Data)
@@ -56,7 +56,7 @@ extension Goal {
         self.length = data.length
         self.repeat = data.repeat
         self.deadline = data.deadline
-        self.goalNotifications = data.goalNotifications
+        self.notifications = data.goalNotifications
         self.notes = data.notes
         self.status = GoalStatus(totalEntries: length)
     }
@@ -67,7 +67,7 @@ extension Goal {
         self.length = data.length
         self.repeat = data.repeat
         self.deadline = data.deadline
-        self.goalNotifications = data.goalNotifications
+        self.notifications = data.goalNotifications
         self.notes = data.notes
     }
 }
