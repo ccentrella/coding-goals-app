@@ -22,6 +22,7 @@
         "status": {
             "entriesCompleted": 25,
             "totalEntries": 50,
+            "percentCompleted": 0.5,
             "isPercent": false
         }
     },
@@ -48,6 +49,7 @@
         "status": {
             "entriesCompleted": 6,
             "totalEntries": 100,
+            "percentCompleted": 0.06,
             "isPercent": true
         }
     },
@@ -74,6 +76,7 @@
         "status": {
             "entriesCompleted": 25,
             "totalEntries": 100,
+            "percentCompleted": 0.25,
             "isPercent": true
         }
     }
