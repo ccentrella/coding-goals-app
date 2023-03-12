@@ -15,6 +15,8 @@ struct GoalDetailView: View {
     @State private var isPresentingEditView = false
     @State private var isPresentingUpdateView = false
     
+    let heights = stride(from: 0.25, through: 0.85, by: 0.1).map { fraction in PresentationDetent.fraction(fraction) }
+    
     var body: some View {
         VStack(spacing: 15) {
             GoalDetailIntro(isPresentingUpdateView: $isPresentingUpdateView, goal: goal)
@@ -41,7 +43,7 @@ struct GoalDetailView: View {
         }
         .sheet(isPresented: $isPresentingUpdateView) {
             GoalUpdateView(goal: $goal)
-                .presentationDetents([.height(250)])
+                .presentationDetents([.fraction(0.25), .fraction(0.4), .medium])
                 .presentationDragIndicator(.visible)
         }
     }
