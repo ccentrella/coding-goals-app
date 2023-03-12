@@ -89,7 +89,7 @@ public final class DataStore: ObservableObject {
                                     in: .userDomainMask,
                                     appropriateFor: nil,
                                     create: false)
-        .appendingPathComponent("scrums.data")
+        .appendingPathComponent("goals.data")
     }
 }
 
