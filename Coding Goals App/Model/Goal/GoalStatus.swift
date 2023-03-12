@@ -9,44 +9,51 @@ import Foundation
 import SwiftUI
 
 struct GoalStatus: Codable, Hashable {
-    var entriesCompleted: Int = 0
-    var totalEntries: Int = 0
+    
+    var entriesCompleted: Int = 0 {
+        didSet {
+            updatePercent()
+        }
+    }
+    var totalEntries: Int = 0 {
+        didSet {
+            updatePercent()
+        }
+    }
+    var percentCompleted: Double = 0.0 {
+        didSet {
+            updateEntriesCompleted()
+        }
+    }
+    
     var isPercent: Bool = false {
-        
-        // TODO: We need to update total and progress somehow, depending on whether isPercent is selected. It should seamlessly transition without changing progres. However, we do want the interface to change. For example, if there are seven entries and entries completed was marked 5, entries completed if it represents the percent, needs to update to 71
-        
-        // TODO: Perhaps we should use a different control when isPercent is selected, because manually pressing the plus button numerosus can be an exhausting user experience
         willSet {
             var controller: GoalStatusController
-            var newTotal: Int
-            
-            if newValue {
-                controller = PercentGoalStatusController()
-                newTotal = 100
-            }
-            else {
-                controller = DefaultGoalStatusController()
-                newTotal = length
-            }
-            
+            controller = newValue ? PercentGoalStatusController() : DefaultGoalStatusController()
             GoalStatusHelper.setController(controller: controller)
-            self.updateTotal(newTotal)
         }
     }
     
     var entriesRemaining: Int {
         return totalEntries - entriesCompleted
     }
-    var progress: Double {
-        return totalEntries == 0 ? 0 : Double(entriesCompleted) / Double(totalEntries)
+    var percentRemaining: Double {
+        return 1 - percentCompleted
     }
-    var progressPercent: Int {
-        let percent = progress * 100
-        let rounded = Int(percent.rounded())
-        return rounded
+    
+    private mutating func updatePercent() {
+        let percent = Double(entriesCompleted) / Double(totalEntries)
+        let roundedPercent = round(percent * 100) / 100
+        if self.percentCompleted != roundedPercent {
+            self.percentCompleted = roundedPercent
+        }
     }
-    var progressPercentRemaining: Int {
-        return 100 - progressPercent
+    private mutating func updateEntriesCompleted() {
+        let entriesCompleted = percentCompleted * Double(totalEntries)
+        let roundedEntriesCompleted = Int(round(entriesCompleted))
+        if self.entriesCompleted != roundedEntriesCompleted {
+            self.entriesCompleted = roundedEntriesCompleted
+        }
     }
 }
 
@@ -56,8 +63,6 @@ extension GoalStatus {
     }
     
     mutating func updateTotal(_ newValue: Int) {
-        if !self.isPercent {
-            self.totalEntries = newValue
-        }
+        self.totalEntries = newValue
     }
 }

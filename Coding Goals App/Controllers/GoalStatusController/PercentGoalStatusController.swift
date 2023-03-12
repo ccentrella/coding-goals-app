@@ -14,6 +14,6 @@ class PercentGoalStatusController: GoalStatusController {
     }
     
     func getProgressMessage(goal: Goal) -> String {
-        "\(goal.status.progressPercentRemaining)% remaining"
+        "\(goal.status.percentRemaining.formatted(.percent)) remaining"
     }
 }

@@ -35,8 +35,8 @@ struct OverviewBanner: BannerView {
                     Spacer()
                 }
                 HStack {
-                    Gauge(value: goal.status.progress, in: /*@START_MENU_TOKEN@*/0...1/*@END_MENU_TOKEN@*/) {
-                        Text(goal.status.progressPercent.description)
+                    Gauge(value: goal.status.percentCompleted) {
+                        Text(goal.status.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
                     }
                     .gaugeStyle(.accessoryCircularCapacity)
                     .colorScheme(.light)

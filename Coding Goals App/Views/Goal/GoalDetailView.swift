@@ -40,7 +40,7 @@ struct GoalDetailView: View {
             })
         }
         .sheet(isPresented: $isPresentingUpdateView) {
-            GoalUpdateView(status: $goal.status)
+            GoalUpdateView(goal: $goal)
                 .presentationDetents([.height(250)])
                 .presentationDragIndicator(.visible)
         }

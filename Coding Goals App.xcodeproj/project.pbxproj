@@ -45,6 +45,7 @@
 		C3EEAB0E29BD1E5B00A8D6B7 /* GoalStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB0D29BD1E5B00A8D6B7 /* GoalStatusController.swift */; };
 		C3EEAB1029BD1FEF00A8D6B7 /* PercentGoalStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB0F29BD1FEF00A8D6B7 /* PercentGoalStatusController.swift */; };
 		C3EEAB1229BD1FFE00A8D6B7 /* DefaultGoalStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB1129BD1FFE00A8D6B7 /* DefaultGoalStatusController.swift */; };
+		C3EEAB1629BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB1529BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift */; };
 		C3F1C67C29B41E0F00F0A62B /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67B29B41E0F00F0A62B /* GoalType.swift */; };
 		C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		C3EEAB0D29BD1E5B00A8D6B7 /* GoalStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStatusController.swift; sourceTree = "<group>"; };
 		C3EEAB0F29BD1FEF00A8D6B7 /* PercentGoalStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentGoalStatusController.swift; sourceTree = "<group>"; };
 		C3EEAB1129BD1FFE00A8D6B7 /* DefaultGoalStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGoalStatusController.swift; sourceTree = "<group>"; };
+		C3EEAB1529BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentWithoutCharacterFormatStyle.swift; sourceTree = "<group>"; };
 		C3F1C67B29B41E0F00F0A62B /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCustomRepeatOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 		C38C3C4329BC31A30091FDC2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C3EEAB1429BD6E0B00A8D6B7 /* Formatters */,
 				C38C3C4429BC31BC0091FDC2 /* GoalStatusHelper.swift */,
 			);
 			path = Helpers;
@@ -337,6 +340,14 @@
 				C3EEAB0C29BD1DE200A8D6B7 /* GoalStatusController */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3EEAB1429BD6E0B00A8D6B7 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				C3EEAB1529BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		C3F1C67629B4189500F0A62B /* future-release */ = {
@@ -513,6 +524,7 @@
 				C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */,
 				C34D92F929B2AFE2006D979C /* GoalDetailEditView.swift in Sources */,
 				C3B92C9C29A167C6003A8C74 /* GoalListView.swift in Sources */,
+				C3EEAB1629BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift in Sources */,
 				C3B92C9729A11F50003A8C74 /* DataStore.swift in Sources */,
 				C38C3C4729BCF0C80091FDC2 /* NullableBool.swift in Sources */,
 				C334E5BA29A9910A00283217 /* Shape.swift in Sources */,
