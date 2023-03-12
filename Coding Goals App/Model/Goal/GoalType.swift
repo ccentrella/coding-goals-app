@@ -35,13 +35,13 @@ extension GoalType {
         case .pages:
             return Color.pink
         case .books:
-            return Color.mint
+            return Color.teal
         case .videos:
-            return Color.blue
+            return Color.indigo
         case .functions:
             return Color.orange
         case .articles:
-            return Color.green
+            return Color.brown
         case .apps:
             return Color.purple
         }
