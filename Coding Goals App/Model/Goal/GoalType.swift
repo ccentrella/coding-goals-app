@@ -19,6 +19,17 @@ enum GoalType: String, Codable, CaseIterable {
 
 extension GoalType {
     
+    func getNoun(count: Int) -> String {
+        var noun: String
+        
+        if self == GoalType.articles || self == GoalType.books {
+            noun = "pages"
+        } else {
+            noun = self.rawValue
+        }
+        return noun.pluralize(count: count)
+    }
+    
     func getVerb() -> String {
         switch (self) {
         case .pages, .articles, .books:

@@ -14,7 +14,11 @@ class DefaultGoalStatusController: GoalStatusController {
     }
     
     func getProgressMessage(goal: Goal) -> String {
-        "\(goal.status.entriesRemaining) \(goal.type) to \(goal.type.getVerb().lowercased())"
+        let entriesRemaining = goal.status.entriesRemaining
+        let type = goal.type.getNoun(count: goal.status.entriesRemaining)
+        let verb = goal.type.getVerb().lowercased()
+        
+        return "\(entriesRemaining) \(type) to \(verb)"
     }
     
     private func isArticlesOrBooks(goal: Goal) -> Bool {

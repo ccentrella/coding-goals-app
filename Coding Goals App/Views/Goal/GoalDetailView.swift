@@ -43,7 +43,7 @@ struct GoalDetailView: View {
         }
         .sheet(isPresented: $isPresentingUpdateView) {
             GoalUpdateView(goal: $goal)
-                .presentationDetents([.fraction(0.25), .fraction(0.4), .medium])
+                .presentationDetents([.fraction(0.4), .medium])
                 .presentationDragIndicator(.visible)
         }
     }
