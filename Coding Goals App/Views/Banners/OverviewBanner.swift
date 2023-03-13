@@ -21,6 +21,7 @@ struct OverviewBanner: BannerView {
                             .frame(height: 60)
                         Image(goalType: goal.type)
                             .foregroundColor(.white)
+                            .imageScale(.large)
                     }
                     VStack(alignment: .leading, spacing: 7.0) {
                         Text("At A Glance")
