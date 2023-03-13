@@ -80,8 +80,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "GoalStatus"
-            landmarkType = "14">
+            landmarkName = "percentCompleted"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "56FAE856-B5D3-4721-A1F4-70A73183F3BE - 68e042813e0f383c"

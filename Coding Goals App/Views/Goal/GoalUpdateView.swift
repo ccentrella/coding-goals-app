@@ -16,7 +16,7 @@ struct GoalUpdateView: View {
                 if goal.status.isPercent {
                     VStack(alignment: .leading) {
                         Slider(value: $goal.status.percentCompleted, in: 0...1, step: 0.01) {
-                            Text("Completed:")
+                            Text("Progress")
                         }
                         Text("\(goal.status.percentCompleted.formatted(.percent)) completed")
                     }
@@ -24,7 +24,7 @@ struct GoalUpdateView: View {
                 else {
                     Stepper(value: $goal.status.entriesCompleted, in: 0...goal.status.totalEntries) {
                         HStack {
-                            Text("Completed:")
+                            Text(goal.type.getEntriesCompletedMessage())
                             Spacer()
                             Text(String(goal.status.entriesCompleted))
                                 .padding(.trailing, 10.0)
@@ -34,14 +34,14 @@ struct GoalUpdateView: View {
                 if GoalStatusHelper.isTotalVisible(goal: goal) {
                     Stepper(value: $goal.status.totalEntries) {
                         HStack {
-                            Text("Total:")
+                            Text(goal.type.getTotalEntriesMessage())
                             Spacer()
                             Text(String(goal.status.totalEntries))
                                 .padding(.trailing, 10.0)
                         }
                     }
                 }
-                Toggle("Use percent", isOn: $goal.status.isPercent)
+                Toggle("Show percent", isOn: $goal.status.isPercent)
             }
             .navigationTitle("Update Goal")
             .navigationBarTitleDisplayMode(.inline)

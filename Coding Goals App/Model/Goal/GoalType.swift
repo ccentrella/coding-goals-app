@@ -57,4 +57,16 @@ extension GoalType {
             return Color.purple
         }
     }
+    
+    func getEntriesCompletedMessage() -> String {
+        let noun = getNoun(count: 0).capitalized
+        let verb = getVerb().lowercased()
+        
+        return "\(noun) \(verb)"
+    }
+    
+    func getTotalEntriesMessage() -> String {
+        let noun = getNoun(count: 0)
+        return "Total \(noun)"
+    }
 }
