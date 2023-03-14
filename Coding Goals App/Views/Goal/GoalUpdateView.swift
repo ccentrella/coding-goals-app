@@ -43,7 +43,7 @@ struct GoalUpdateView: View {
                 }
                 Toggle("Show percent", isOn: $goal.status.isPercent)
             }
-            .navigationTitle("Update Goal")
+            .navigationTitle("Update Progress")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
