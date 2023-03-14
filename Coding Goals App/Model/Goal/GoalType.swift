@@ -41,6 +41,17 @@ extension GoalType {
         }
     }
     
+    func getParticiple() -> String {
+        switch (self) {
+        case .pages, .articles, .books:
+            return "read"
+        case .apps, .functions:
+            return "created"
+        case .videos:
+            return "watched"
+        }
+    }
+    
     func getColor() -> Color {
         switch (self) {
         case .pages:
@@ -60,9 +71,9 @@ extension GoalType {
     
     func getEntriesCompletedMessage() -> String {
         let noun = getNoun(count: 0).capitalized
-        let verb = getVerb().lowercased()
+        let participle = getParticiple()
         
-        return "\(noun) \(verb)"
+        return "\(noun) \(participle)"
     }
     
     func getTotalEntriesMessage() -> String {
