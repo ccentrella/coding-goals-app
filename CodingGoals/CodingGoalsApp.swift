@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Coding_Goals_AppApp: App {
+struct CodingGoalsApp: App {
     
     @StateObject private var dataStore = DataStore()
     @Environment(\.scenePhase) private var scenePhase
