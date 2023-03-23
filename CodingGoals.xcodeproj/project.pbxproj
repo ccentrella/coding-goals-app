@@ -17,7 +17,6 @@
 		C358E2B729AECC4B00217EBB /* GoalDetailEditNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B629AECC4B00217EBB /* GoalDetailEditNotifications.swift */; };
 		C358E2B929AECC8700217EBB /* GoalDetailEditNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C358E2B829AECC8700217EBB /* GoalDetailEditNotes.swift */; };
 		C372399B29B97D7A0058798D /* GoalUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372399A29B97D7A0058798D /* GoalUpdateView.swift */; };
-		C372399D29B9826A0058798D /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372399C29B9826A0058798D /* OptionalBinding.swift */; };
 		C373D08329B0379C00117C62 /* GoalDetailIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D08229B0379C00117C62 /* GoalDetailIntro.swift */; };
 		C373D08529B0381000117C62 /* GoalDetailBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D08429B0381000117C62 /* GoalDetailBody.swift */; };
 		C391462329B81D2700B15340 /* GoalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391462229B81D2700B15340 /* GoalStatus.swift */; };
@@ -48,7 +47,6 @@
 		C3EEAB1229BD1FFE00A8D6B7 /* DefaultGoalStatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB1129BD1FFE00A8D6B7 /* DefaultGoalStatusPresenter.swift */; };
 		C3EEAB1629BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EEAB1529BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift */; };
 		C3F1C67C29B41E0F00F0A62B /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67B29B41E0F00F0A62B /* GoalType.swift */; };
-		C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +77,6 @@
 		C358E2B629AECC4B00217EBB /* GoalDetailEditNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditNotifications.swift; sourceTree = "<group>"; };
 		C358E2B829AECC8700217EBB /* GoalDetailEditNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditNotes.swift; sourceTree = "<group>"; };
 		C372399A29B97D7A0058798D /* GoalUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUpdateView.swift; sourceTree = "<group>"; };
-		C372399C29B9826A0058798D /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
 		C373D08229B0379C00117C62 /* GoalDetailIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailIntro.swift; sourceTree = "<group>"; };
 		C373D08429B0381000117C62 /* GoalDetailBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailBody.swift; sourceTree = "<group>"; };
 		C391462229B81D2700B15340 /* GoalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStatus.swift; sourceTree = "<group>"; };
@@ -115,7 +112,6 @@
 		C3EEAB1129BD1FFE00A8D6B7 /* DefaultGoalStatusPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGoalStatusPresenter.swift; sourceTree = "<group>"; };
 		C3EEAB1529BD6E3C00A8D6B7 /* PercentWithoutCharacterFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentWithoutCharacterFormatStyle.swift; sourceTree = "<group>"; };
 		C3F1C67B29B41E0F00F0A62B /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
-		C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCustomRepeatOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,15 +139,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C30962ED29BD83D10005FD3B /* future-release */ = {
-			isa = PBXGroup;
-			children = (
-				C372399C29B9826A0058798D /* OptionalBinding.swift */,
-				C3F1C67F29B426DC00F0A62B /* GoalCustomRepeatOptions.swift */,
-			);
-			path = "future-release";
-			sourceTree = "<group>";
-		};
 		C32C5F1729CAAD8E008B4748 /* InspirationalMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +237,6 @@
 				C3B92C9629A11F50003A8C74 /* DataStore.swift */,
 				C3D82DFD29AC20F100A3BBB9 /* NullableDate.swift */,
 				C3B92C6729A0632D003A8C74 /* Assets.xcassets */,
-				C30962ED29BD83D10005FD3B /* future-release */,
 				C3B92C6A29A0632D003A8C74 /* (Preview Content) */,
 				C334E5B629A984AC00283217 /* Extensions */,
 				C3D82DFF29AC215500A3BBB9 /* Goal */,
@@ -511,9 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C391462329B81D2700B15340 /* GoalStatus.swift in Sources */,
-				C372399D29B9826A0058798D /* OptionalBinding.swift in Sources */,
 				C3B92C9F29A167F4003A8C74 /* GoalDetailView.swift in Sources */,
-				C3F1C68029B426DC00F0A62B /* GoalCustomRepeatOptions.swift in Sources */,
 				C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */,
 				C34D92F929B2AFE2006D979C /* GoalDetailEditView.swift in Sources */,
 				C3B92C9C29A167C6003A8C74 /* GoalListView.swift in Sources */,
