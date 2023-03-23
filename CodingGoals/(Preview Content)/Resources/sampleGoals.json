@@ -1,15 +1,16 @@
 [
     {
         "id": "07DA2FEA-CD5D-44A1-8A68-81C19C50FAAE",
-        "description": "Read 50 pages of 'Crime and Punishment'",
-        "type": "pages",
-        "length": 50,
+        "overview": {
+            "description": "Read 50 pages of 'Crime and Punishment'",
+            "type": "pages",
+            "length": 50,
+            "deadline": {
+                "hasValue": false,
+                "date": 1687389000
+            }},
         "repeat": {
             "repeatOption": "Every Day"
-        },
-        "deadline": {
-            "hasValue": false,
-            "date": 1687389000
         },
         "notifications": {
             "id": "2454F674-9626-4DEE-9C44-8C68F2FFBF24",
@@ -18,25 +19,26 @@
             "showAlertBanner": true,
             "showCongratsBanner": true
         },
-        "notes": "",
         "status": {
             "entriesCompleted": 25,
             "totalEntries": 50,
             "percentCompleted": 0.5,
             "isPercent": false
-        }
+        },
+        "notes": ""
     },
     {
         "id": "C2B82524-15A7-46C2-8162-7A5B93539C56",
-        "description": "Complete 'Atomic Habits' audiobook",
-        "type": "books",
-        "length": 1,
+        "overview": {
+            "description": "Complete 'Atomic Habits' audiobook",
+            "type": "books",
+            "length": 1,
+            "deadline": {
+                "hasValue": false,
+                "date": 1662057599
+            }},
         "repeat": {
             "repeatOption": "Never"
-        },
-        "deadline": {
-            "hasValue": false,
-            "date": 1662057599
         },
         "notifications": {
             "id": "EAE65F1C-8518-4157-985C-65DA0B84B086",
@@ -45,25 +47,26 @@
             "showAlertBanner": false,
             "showCongratsBanner": true
         },
-        "notes": "",
         "status": {
             "entriesCompleted": 6,
             "totalEntries": 100,
             "percentCompleted": 0.06,
             "isPercent": true
-        }
+        },
+        "notes": ""
     },
     {
         "id": "8762F2A7-6F25-43FE-9A9B-02C7D6A91321",
-        "description": "Create a new function in my project",
-        "type": "functions",
-        "length": 1,
+        "overview": {
+            "description": "Create a new function in my project",
+            "type": "functions",
+            "length": 1,
+            "deadline": {
+                "hasValue": false,
+                "date": 1708001130
+            }},
         "repeat": {
             "repeatOption": "Never"
-        },
-        "deadline": {
-            "hasValue": false,
-            "date": 1708001130
         },
         "notifications": {
             "id": "8D369F2F-2E1C-4A34-9B31-4AF2ED4C4FF1",
@@ -72,13 +75,13 @@
             "showAlertBanner": true,
             "showCongratsBanner": false
         },
-        "notes": "",
         "status": {
             "entriesCompleted": 25,
             "totalEntries": 100,
             "percentCompleted": 0.25,
             "isPercent": true
-        }
+        },
+        "notes": ""
     }
 ]
  
