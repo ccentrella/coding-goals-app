@@ -1,5 +1,5 @@
 //
-//  PluralizeString.swift
+//  StringExtension.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 3/11/23.

@@ -27,7 +27,7 @@ struct OverviewBanner: BannerView {
                         Text("At A Glance")
                             .font(.title2)
                             .bold()
-                        Text(GoalStatusHelper.getProgressMessage(goal: goal))
+                        Text(GoalStatusPresenterSingleton.presenter.getProgressMessage(goal: goal))
                             .font(.callout)
                             .bold()
                             .padding(.bottom, 25.0)

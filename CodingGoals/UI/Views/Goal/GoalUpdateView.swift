@@ -31,7 +31,7 @@ struct GoalUpdateView: View {
                         }
                     }
                 }
-                if GoalStatusHelper.isTotalVisible(goal: goal) {
+                if GoalStatusPresenterSingleton.presenter.isTotalVisible(goal: goal) {
                     Stepper(value: $goal.status.totalEntries) {
                         HStack {
                             Text(goal.type.getTotalEntriesMessage())

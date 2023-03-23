@@ -25,12 +25,11 @@ struct GoalStatus: Codable, Hashable {
             updateEntriesCompleted()
         }
     }
-    
     var isPercent: Bool = false {
         willSet {
-            var controller: GoalStatusController
-            controller = newValue ? PercentGoalStatusController() : DefaultGoalStatusController()
-            GoalStatusHelper.setController(controller: controller)
+            var presenter: GoalStatusPresenter
+            presenter = newValue ? PercentGoalStatusPresenter() : DefaultGoalStatusPresenter()
+            GoalStatusPresenterSingleton.presenter = presenter
         }
     }
     

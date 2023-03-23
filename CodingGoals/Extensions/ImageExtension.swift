@@ -1,5 +1,5 @@
 //
-//  Image.swift
+//  ImageExtension.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 2/24/23.
@@ -14,7 +14,7 @@ extension Image {
         let systemName = Image.getSystemImageName(goalType: goalType)
         self.init(systemName: systemName)
     }
-    private static func getSystemImageName(goalType: GoalType) -> String {
+    static func getSystemImageName(goalType: GoalType) -> String {
         switch (goalType) {
         case .pages:
             return "doc.plaintext"

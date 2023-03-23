@@ -1,5 +1,5 @@
 //
-//  DefaultGoalStatusController.swift
+//  DefaultGoalStatusPresenter.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 3/11/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DefaultGoalStatusController: GoalStatusController {
+class DefaultGoalStatusPresenter: GoalStatusPresenter {
     
     func isTotalVisible(goal: Goal) -> Bool {
         return isArticlesOrBooks(goal: goal)

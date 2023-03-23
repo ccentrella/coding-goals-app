@@ -22,7 +22,7 @@ struct GoalDetailBody: View {
             Spacer()
         }
         HStack {
-            Text(InspirationalMessage.getInspirationalMessage(goal: goal))
+            Text(SampleInspirationalMessage.getInspirationalMessage(goal: goal))
                 .font(.headline)
                 .padding(.top, 5.0)
             Spacer()

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class InspirationalMessage {
+class SampleInspirationalMessage: InspirationalMessage {
     
     private static let name = "Frank"
     private static let affirmativeMessages: [String] = [
@@ -42,16 +42,16 @@ class InspirationalMessage {
     }
     
     // TODO: Implement this correctly based on progress and deadline
-    private static func getScore() -> Double {
+     static func getScore() -> Double {
         return 1
     }
     
-    private static func affirmativeMessage() -> String {
+     static func affirmativeMessage() -> String {
         let randomMessageIndex = Int.random(in: 0..<affirmativeMessages.count)
         return affirmativeMessages[randomMessageIndex]
     }
     
-    private static func supportiveMessage() -> String {
+     static func supportiveMessage() -> String {
         let randomMessageIndex = Int.random(in: 0..<supportiveMessages.count)
         return supportiveMessages[randomMessageIndex]
     }
