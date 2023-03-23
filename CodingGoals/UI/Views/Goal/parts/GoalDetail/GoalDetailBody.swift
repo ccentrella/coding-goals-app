@@ -12,9 +12,9 @@ struct GoalDetailBody: View {
     let goal: Goal
     var body: some View {
         HStack(alignment: .top) {
-            if goal.deadline.hasValue {
+            if goal.overview.deadline.hasValue {
                 Image(systemName: "clock")
-                Text("Due \(goal.deadline.date.formatted(date: .complete, time: .shortened))")
+                Text("Due \(goal.overview.deadline.date.formatted(date: .complete, time: .shortened))")
             }
             else {
                 Label("No deadline specified", systemImage: "clock")
@@ -22,7 +22,7 @@ struct GoalDetailBody: View {
             Spacer()
         }
         HStack {
-            Text(SampleInspirationalMessage.getInspirationalMessage(goal: goal))
+            Text(InspirationalMessage.getInspirationalMessage(goal: goal))
                 .font(.headline)
                 .padding(.top, 5.0)
             Spacer()

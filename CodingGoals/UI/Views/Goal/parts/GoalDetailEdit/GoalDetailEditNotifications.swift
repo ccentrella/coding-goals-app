@@ -13,20 +13,20 @@ struct GoalDetailEditNotifications: View {
     
     var body: some View {
         Section("Notifications") {
-            Picker("Remind Me", selection: $data.goalNotifications.remindMe) {
+            Picker("Remind Me", selection: $data.notifications.remindMe) {
                 ForEach (GoalRemindMe.allCases, id: \.self) { goalRemindMe in
                     Text(goalRemindMe.rawValue)
                         .tag(goalRemindMe.rawValue)
                 }
             }
-            Picker("Alert", selection: $data.goalNotifications.alert) {
+            Picker("Alert", selection: $data.notifications.alert) {
                 ForEach (GoalAlert.allCases, id: \.self) { goalAlert in
                     Text(goalAlert.rawValue)
                         .tag(goalAlert.rawValue)
                 }
             }
-            Toggle("Show Alert Banner", isOn: $data.goalNotifications.showAlertBanner)
-            Toggle("Show Congrats Banner", isOn: $data.goalNotifications.showCongratsBanner)
+            Toggle("Show Alert Banner", isOn: $data.notifications.showAlertBanner)
+            Toggle("Show Congrats Banner", isOn: $data.notifications.showCongratsBanner)
         }
     }
 }

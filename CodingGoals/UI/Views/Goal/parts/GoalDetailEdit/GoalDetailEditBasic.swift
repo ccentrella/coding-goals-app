@@ -13,21 +13,21 @@ struct GoalDetailEditBasic: View {
     
     var body: some View {
         Section("Basic Information") {
-            Stepper(value: $data.length) {
+            Stepper(value: $data.overview.length) {
                 HStack {
                     Text("Length")
                     Spacer()
-                    Text(String(data.length))
+                    Text(String(data.overview.length))
                         .padding(.trailing, 10.0)
                 }
             }
-            Picker("Type", selection: $data.type) {
+            Picker("Type", selection: $data.overview.type) {
                 ForEach (GoalType.allCases, id: \.self) { goalType in
                     Text(goalType.rawValue.localizedCapitalized)
                         .tag(goalType.rawValue)
                 }
             }
-            TextField("Add Description", text: $data.description)
+            TextField("Add Description", text: $data.overview.description)
         }
     }
 }

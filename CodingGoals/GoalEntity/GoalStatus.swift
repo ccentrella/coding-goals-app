@@ -25,20 +25,7 @@ struct GoalStatus: Codable, Hashable {
             updateEntriesCompleted()
         }
     }
-    var isPercent: Bool = false {
-        willSet {
-            var presenter: GoalStatusPresenter
-            presenter = newValue ? PercentGoalStatusPresenter() : DefaultGoalStatusPresenter()
-            GoalStatusPresenterSingleton.presenter = presenter
-        }
-    }
-    
-    var entriesRemaining: Int {
-        return totalEntries - entriesCompleted
-    }
-    var percentRemaining: Double {
-        return 1 - percentCompleted
-    }
+    var isPercent: Bool = false
     
     private mutating func updatePercent() {
         let percent = Double(entriesCompleted) / Double(totalEntries)
@@ -53,15 +40,5 @@ struct GoalStatus: Codable, Hashable {
         if self.entriesCompleted != roundedEntriesCompleted {
             self.entriesCompleted = roundedEntriesCompleted
         }
-    }
-}
-
-extension GoalStatus {
-    init(totalEntries: Int) {
-        self.totalEntries = totalEntries
-    }
-    
-    mutating func updateTotal(_ newValue: Int) {
-        self.totalEntries = newValue
     }
 }

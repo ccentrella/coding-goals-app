@@ -14,9 +14,9 @@ struct GoalDetailEditOptions: View {
     
     var body: some View {
         Section("Options") {
-            Toggle("Add Deadline", isOn: $data.deadline.hasValue)
-            if data.deadline.hasValue {
-                DatePicker("Deadline", selection: $data.deadline.date)
+            Toggle("Add Deadline", isOn: $data.overview.deadline.hasValue)
+            if data.overview.deadline.hasValue {
+                DatePicker("Deadline", selection: $data.overview.deadline.date)
             }
             Picker("Repeat", selection: $data.repeat.repeatOption) {
                 ForEach (GoalRepeatOptions.allCases, id: \.self) { goalRepeat in

@@ -16,9 +16,9 @@ struct GoalListItem: View {
         HStack {
             ZStack {
                 Circle()
-                    .fill(goalType: goal.type)
+                    .fill(goalType: goal.overview.type)
                     .frame(height: 50)
-                Image(goalType: goal.type)
+                Image(goalType: goal.overview.type)
                     .foregroundColor(.white)
             }
             .padding(.trailing, 10.0)

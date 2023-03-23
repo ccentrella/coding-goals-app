@@ -32,9 +32,9 @@ struct GoalDetailView: View {
         .navigationTitle("Explore Goal")
         .padding()
         .toolbarColorScheme(.dark, for: .navigationBar)
-        .toolbarBackground(goal.type.getColor(), for: .navigationBar)
+        .toolbarBackground(goal.overview.type.getColor(), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .background(goal.type.getColor())
+        .background(goal.overview.type.getColor())
         .foregroundColor(.white)
         .sheet(isPresented: $isPresentingEditView) {
             GoalDetailEditView(data: $data, isOpen: $isPresentingEditView, isNew: false, onSubmit: {

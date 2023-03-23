@@ -15,13 +15,13 @@ class DefaultGoalStatusPresenter: GoalStatusPresenter {
     
     func getProgressMessage(goal: Goal) -> String {
         let entriesRemaining = goal.status.entriesRemaining
-        let type = goal.type.getNoun(count: goal.status.entriesRemaining)
-        let verb = goal.type.getVerb().lowercased()
+        let type = goal.overview.type.getNoun(count: goal.status.entriesRemaining)
+        let verb = goal.overview.type.getVerb().lowercased()
         
         return "\(entriesRemaining) \(type) to \(verb)"
     }
     
     private func isArticlesOrBooks(goal: Goal) -> Bool {
-        return goal.type == GoalType.articles || goal.type == GoalType.books
+        return goal.overview.type == GoalType.articles || goal.overview.type == GoalType.books
     }
 }

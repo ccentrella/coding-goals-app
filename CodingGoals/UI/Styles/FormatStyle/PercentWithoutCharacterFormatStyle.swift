@@ -9,7 +9,6 @@ import Foundation
 
 class PercentWithoutCharacterFormatStyle: FormatStyle {
     typealias FormatInput = Double
-    
     typealias FormatOutput = String
     
     func format(_ value: FormatInput) -> FormatOutput {

@@ -24,17 +24,17 @@ struct GoalUpdateView: View {
                 else {
                     Stepper(value: $goal.status.entriesCompleted, in: 0...goal.status.totalEntries) {
                         HStack {
-                            Text(goal.type.getEntriesCompletedMessage())
+                            Text(goal.overview.type.getEntriesCompletedMessage())
                             Spacer()
                             Text(String(goal.status.entriesCompleted))
                                 .padding(.trailing, 10.0)
                         }
                     }
                 }
-                if GoalStatusPresenterSingleton.presenter.isTotalVisible(goal: goal) {
+                if goal.status.presenter.isTotalVisible(goal: goal) {
                     Stepper(value: $goal.status.totalEntries) {
                         HStack {
-                            Text(goal.type.getTotalEntriesMessage())
+                            Text(goal.overview.type.getTotalEntriesMessage())
                             Spacer()
                             Text(String(goal.status.totalEntries))
                                 .padding(.trailing, 10.0)

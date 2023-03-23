@@ -1,16 +1,11 @@
 //
-//  GoalRepeat.swift
-//  Coding Goals App
+//  GoalRepeatOptions.swift
+//  CodingGoals
 //
-//  Created by Christopher Centrella on 2/17/23.
+//  Created by Christopher Centrella on 3/22/23.
 //
 
 import Foundation
-
-// Model exists to enable extension of repeat functionality
-struct GoalRepeat: Codable, Hashable {
-    var repeatOption: GoalRepeatOptions = .never
-}
 
 enum GoalRepeatOptions: String, Codable, CaseIterable {
     case never = "Never"

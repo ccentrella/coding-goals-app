@@ -19,7 +19,7 @@ struct OverviewBanner: BannerView {
                     ZStack {
                         Circle()
                             .frame(height: 60)
-                        Image(goalType: goal.type)
+                        Image(goalType: goal.overview.type)
                             .foregroundColor(.white)
                             .imageScale(.large)
                     }
@@ -27,7 +27,7 @@ struct OverviewBanner: BannerView {
                         Text("At A Glance")
                             .font(.title2)
                             .bold()
-                        Text(GoalStatusPresenterSingleton.presenter.getProgressMessage(goal: goal))
+                        Text(goal.status.presenter.getProgressMessage(goal: goal))
                             .font(.callout)
                             .bold()
                             .padding(.bottom, 25.0)
@@ -46,7 +46,7 @@ struct OverviewBanner: BannerView {
                         Text("Update")
                             .padding(.all, 18.0)
                             .padding(.horizontal, 7.0)
-                            .background(goal.type.getColor())
+                            .background(goal.overview.type.getColor())
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
@@ -56,7 +56,7 @@ struct OverviewBanner: BannerView {
             .padding(28.0)
             .padding(.top, 5.0)
         }
-        .foregroundColor(goal.type.getColor())
+        .foregroundColor(goal.overview.type.getColor())
         .background(Color(white: 0.95))
         .cornerRadius(28.0)
     }
