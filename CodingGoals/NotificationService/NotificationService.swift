@@ -32,6 +32,18 @@ class NotificationService {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
     
+    public static func requestNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { granted, error in
+            
+            if let error = error {
+                // Handle the error here.
+            }
+            
+            // Enable or disable features based on the authorization.
+        }
+    }
+    
     private static func addDeadlineNotification(goal: Goal) async throws {
         
         let date: Date = goal.overview.deadline.date
@@ -89,17 +101,24 @@ class NotificationService {
     private static func addNotification(goal: Goal, date: Date, notification: String) async throws {
         
         var dateComponents: DateComponents = calendar.dateComponents(in: .autoupdatingCurrent, from: date)
-        var content: UNNotificationContent = UNNotificationContent()
-        var trigger: UNCalendarNotificationTrigger = UNCalendarNotificationTrigger(
+        dateComponents.quarter = nil
+        
+        let content: UNMutableNotificationContent = UNMutableNotificationContent()
+        content.title = "Goal Due Soon"
+        content.body = "\(goal.friendlyDescription)"
+        content.sound = .default
+        
+        let trigger: UNCalendarNotificationTrigger = UNCalendarNotificationTrigger(
             dateMatching: dateComponents,
             repeats: false)
-        var request: UNNotificationRequest = UNNotificationRequest(
+        let request: UNNotificationRequest = UNNotificationRequest(
             identifier: "\(goal.id.uuidString)_\(notification)",
             content: content,
             trigger: trigger)
         
         let notificationCenter = UNUserNotificationCenter.current()
         try await notificationCenter.add(request)
+
     }
     
     private static func getMorningDate(date: Date) -> Date {

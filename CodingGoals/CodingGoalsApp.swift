@@ -19,6 +19,7 @@ struct CodingGoalsApp: App {
                 .environmentObject(dataStore)
                 .onAppear {
                     dataStore.loadGoals()
+                    NotificationService.requestNotificationPermission()
                 }
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive {
