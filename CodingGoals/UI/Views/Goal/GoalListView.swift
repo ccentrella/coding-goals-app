@@ -26,6 +26,10 @@ struct GoalListView: View {
                     GoalListItem(goal: goal)
                 }
                 .onDelete { offsets in
+                    offsets.forEach({ offset in
+                        let goal = store.goals[offset]
+                        NotificationService.removeGoal(goalId: goal.id)
+                    })
                     store.goals.remove(atOffsets: offsets)
                 }
             }
@@ -56,6 +60,10 @@ struct GoalListView: View {
                 GoalDetailEditView(data: $data, isOpen: $isPresentingAddView, isNew: true, onSubmit: {
                     let goal = Goal(data: data)
                     store.goals.append(goal)
+                   
+                    Task {
+                        try await NotificationService.addGoal(goal: goal)
+                    }
                 })
             }
         }

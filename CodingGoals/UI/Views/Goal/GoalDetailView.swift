@@ -39,6 +39,11 @@ struct GoalDetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             GoalDetailEditView(data: $data, isOpen: $isPresentingEditView, isNew: false, onSubmit: {
                 goal.update(from: data)
+                
+                NotificationService.removeGoal(goalId: goal.id)
+                Task {
+                    try await NotificationService.addGoal(goal: goal)
+                }
             })
         }
         .sheet(isPresented: $isPresentingUpdateView) {
