@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C30962EC29BD7ADB0005FD3B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30962EB29BD7ADB0005FD3B /* StringExtension.swift */; };
-		C32B689129D6745A00E4BBB5 /* GoalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32B689029D6745A00E4BBB5 /* GoalNotification.swift */; };
 		C32B689329D6746B00E4BBB5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32B689229D6746B00E4BBB5 /* NotificationService.swift */; };
-		C32B689529D677DE00E4BBB5 /* TimeIntervalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32B689429D677DE00E4BBB5 /* TimeIntervalConstants.swift */; };
 		C334E5B829A984BD00283217 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C334E5B729A984BD00283217 /* ImageExtension.swift */; };
 		C334E5BA29A9910A00283217 /* ShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C334E5B929A9910900283217 /* ShapeExtension.swift */; };
 		C34D92F929B2AFE2006D979C /* GoalDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34D92F829B2AFE2006D979C /* GoalDetailEditView.swift */; };
@@ -24,7 +22,6 @@
 		C391462329B81D2700B15340 /* GoalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391462229B81D2700B15340 /* GoalStatus.swift */; };
 		C3B92C6429A0632C003A8C74 /* CodingGoalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C6329A0632C003A8C74 /* CodingGoalsApp.swift */; };
 		C3B92C6829A0632D003A8C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B92C6729A0632D003A8C74 /* Assets.xcassets */; };
-		C3B92C7629A0632D003A8C74 /* CodingGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C7529A0632D003A8C74 /* CodingGoalsTests.swift */; };
 		C3B92C8029A0632D003A8C74 /* CodingGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C7F29A0632D003A8C74 /* CodingGoalsUITests.swift */; };
 		C3B92C8229A0632D003A8C74 /* CodingGoalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C8129A0632D003A8C74 /* CodingGoalsUITestsLaunchTests.swift */; };
 		C3B92C9129A06529003A8C74 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92C9029A06529003A8C74 /* Goal.swift */; };
@@ -39,6 +36,23 @@
 		C3B92CAA29A1689C003A8C74 /* CongratsBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */; };
 		C3B92CAC29A168E7003A8C74 /* IntroBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */; };
 		C3B92CAE29A168F7003A8C74 /* OverviewBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B92CAD29A168F7003A8C74 /* OverviewBanner.swift */; };
+		C3CA8D9929F0E8C2005B1D25 /* GetGoalColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8D9829F0E8C2005B1D25 /* GetGoalColor.swift */; };
+		C3CA8D9B29F0E8CB005B1D25 /* GetGoalNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8D9A29F0E8CB005B1D25 /* GetGoalNoun.swift */; };
+		C3CA8D9D29F0E8E2005B1D25 /* GetGoalParticiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8D9C29F0E8E2005B1D25 /* GetGoalParticiple.swift */; };
+		C3CA8D9F29F0E8EC005B1D25 /* GetGoalVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8D9E29F0E8EC005B1D25 /* GetGoalVerb.swift */; };
+		C3CA8DA129F0E953005B1D25 /* EntriesCompletedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA029F0E953005B1D25 /* EntriesCompletedMessage.swift */; };
+		C3CA8DA329F0E95E005B1D25 /* TotalEntriesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA229F0E95E005B1D25 /* TotalEntriesMessage.swift */; };
+		C3CA8DA629F0EA52005B1D25 /* EntriesRemaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA529F0EA52005B1D25 /* EntriesRemaining.swift */; };
+		C3CA8DA829F0EA66005B1D25 /* GetGoalStatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA729F0EA66005B1D25 /* GetGoalStatusPresenter.swift */; };
+		C3CA8DAA29F0EA75005B1D25 /* PercentRemaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA929F0EA75005B1D25 /* PercentRemaining.swift */; };
+		C3CA8DAC29F0EA8A005B1D25 /* UpdateTotalEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DAB29F0EA8A005B1D25 /* UpdateTotalEntries.swift */; };
+		C3CA8DAF29F0EB44005B1D25 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */; };
+		C3CA8DB129F0EB6F005B1D25 /* ShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */; };
+		C3CA8DB329F0EB7F005B1D25 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */; };
+		C3CA8DB529F0EBD8005B1D25 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB429F0EBD8005B1D25 /* DataStore.swift */; };
+		C3CA8DB829F0EC2D005B1D25 /* FriendlyGoalDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */; };
+		C3CA8DBB29F0ED00005B1D25 /* InspirationalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DBA29F0ED00005B1D25 /* InspirationalMessage.swift */; };
+		C3CA8DBD29F0ED0E005B1D25 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DBC29F0ED0E005B1D25 /* NotificationService.swift */; };
 		C3CB923E29B01C950019AD0A /* GoalListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB923D29B01C950019AD0A /* GoalListItem.swift */; };
 		C3D82DF929AA7C0D00A3BBB9 /* InspirationalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */; };
 		C3D82DFC29AC170800A3BBB9 /* GoalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */; };
@@ -85,9 +99,7 @@
 
 /* Begin PBXFileReference section */
 		C30962EB29BD7ADB0005FD3B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		C32B689029D6745A00E4BBB5 /* GoalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalNotification.swift; sourceTree = "<group>"; };
 		C32B689229D6746B00E4BBB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		C32B689429D677DE00E4BBB5 /* TimeIntervalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalConstants.swift; sourceTree = "<group>"; };
 		C334E5B729A984BD00283217 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C334E5B929A9910900283217 /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
 		C34D92F829B2AFE2006D979C /* GoalDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailEditView.swift; sourceTree = "<group>"; };
@@ -105,7 +117,6 @@
 		C3B92C6929A0632D003A8C74 /* CodingGoals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodingGoals.entitlements; sourceTree = "<group>"; };
 		C3B92C6B29A0632D003A8C74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3B92C7129A0632D003A8C74 /* CodingGoalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingGoalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3B92C7529A0632D003A8C74 /* CodingGoalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingGoalsTests.swift; sourceTree = "<group>"; };
 		C3B92C7B29A0632D003A8C74 /* CodingGoalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingGoalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B92C7F29A0632D003A8C74 /* CodingGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingGoalsUITests.swift; sourceTree = "<group>"; };
 		C3B92C8129A0632D003A8C74 /* CodingGoalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingGoalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -121,6 +132,23 @@
 		C3B92CA929A1689C003A8C74 /* CongratsBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsBanner.swift; sourceTree = "<group>"; };
 		C3B92CAB29A168E7003A8C74 /* IntroBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroBanner.swift; sourceTree = "<group>"; };
 		C3B92CAD29A168F7003A8C74 /* OverviewBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewBanner.swift; sourceTree = "<group>"; };
+		C3CA8D9829F0E8C2005B1D25 /* GetGoalColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalColor.swift; sourceTree = "<group>"; };
+		C3CA8D9A29F0E8CB005B1D25 /* GetGoalNoun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalNoun.swift; sourceTree = "<group>"; };
+		C3CA8D9C29F0E8E2005B1D25 /* GetGoalParticiple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalParticiple.swift; sourceTree = "<group>"; };
+		C3CA8D9E29F0E8EC005B1D25 /* GetGoalVerb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalVerb.swift; sourceTree = "<group>"; };
+		C3CA8DA029F0E953005B1D25 /* EntriesCompletedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesCompletedMessage.swift; sourceTree = "<group>"; };
+		C3CA8DA229F0E95E005B1D25 /* TotalEntriesMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalEntriesMessage.swift; sourceTree = "<group>"; };
+		C3CA8DA529F0EA52005B1D25 /* EntriesRemaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesRemaining.swift; sourceTree = "<group>"; };
+		C3CA8DA729F0EA66005B1D25 /* GetGoalStatusPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalStatusPresenter.swift; sourceTree = "<group>"; };
+		C3CA8DA929F0EA75005B1D25 /* PercentRemaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentRemaining.swift; sourceTree = "<group>"; };
+		C3CA8DAB29F0EA8A005B1D25 /* UpdateTotalEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTotalEntries.swift; sourceTree = "<group>"; };
+		C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
+		C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		C3CA8DB429F0EBD8005B1D25 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyGoalDescription.swift; sourceTree = "<group>"; };
+		C3CA8DBA29F0ED00005B1D25 /* InspirationalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalMessage.swift; sourceTree = "<group>"; };
+		C3CA8DBC29F0ED0E005B1D25 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C3CB923D29B01C950019AD0A /* GoalListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListItem.swift; sourceTree = "<group>"; };
 		C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalMessage.swift; sourceTree = "<group>"; };
 		C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalHistory.swift; sourceTree = "<group>"; };
@@ -176,9 +204,7 @@
 		C32B688F29D6740200E4BBB5 /* NotificationService */ = {
 			isa = PBXGroup;
 			children = (
-				C32B689029D6745A00E4BBB5 /* GoalNotification.swift */,
 				C32B689229D6746B00E4BBB5 /* NotificationService.swift */,
-				C32B689429D677DE00E4BBB5 /* TimeIntervalConstants.swift */,
 			);
 			path = NotificationService;
 			sourceTree = "<group>";
@@ -275,7 +301,6 @@
 		C3B92C6229A0632C003A8C74 /* CodingGoals */ = {
 			isa = PBXGroup;
 			children = (
-				C32B688F29D6740200E4BBB5 /* NotificationService */,
 				C3B92C6929A0632D003A8C74 /* CodingGoals.entitlements */,
 				C3B92C6329A0632C003A8C74 /* CodingGoalsApp.swift */,
 				C3B92C9629A11F50003A8C74 /* DataStore.swift */,
@@ -287,6 +312,7 @@
 				C3EAC8C929CBDE32007BCB94 /* GoalEnums */,
 				C3EAC8C429CBDD4A007BCB94 /* GoalUseCases */,
 				C32C5F1729CAAD8E008B4748 /* InspirationalMessage */,
+				C32B688F29D6740200E4BBB5 /* NotificationService */,
 				C32C5F1B29CBCDCD008B4748 /* UI */,
 			);
 			path = CodingGoals;
@@ -304,7 +330,11 @@
 		C3B92C7429A0632D003A8C74 /* CodingGoalsTests */ = {
 			isa = PBXGroup;
 			children = (
-				C3B92C7529A0632D003A8C74 /* CodingGoalsTests.swift */,
+				C3CA8DB429F0EBD8005B1D25 /* DataStore.swift */,
+				C3CA8DAD29F0EB1B005B1D25 /* Extensions */,
+				C3CA8DB629F0EC0A005B1D25 /* GoalUseCases */,
+				C3CA8DB929F0ECD3005B1D25 /* InspirationalMessage */,
+				C3CA8D9629F0E880005B1D25 /* NotificationService */,
 			);
 			path = CodingGoalsTests;
 			sourceTree = "<group>";
@@ -343,6 +373,66 @@
 				C3F1C68129B4280C00F0A62B /* future-release */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		C3CA8D9629F0E880005B1D25 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8DBC29F0ED0E005B1D25 /* NotificationService.swift */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
+		C3CA8D9729F0E89C005B1D25 /* GoalType */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8D9829F0E8C2005B1D25 /* GetGoalColor.swift */,
+				C3CA8D9A29F0E8CB005B1D25 /* GetGoalNoun.swift */,
+				C3CA8D9C29F0E8E2005B1D25 /* GetGoalParticiple.swift */,
+				C3CA8D9E29F0E8EC005B1D25 /* GetGoalVerb.swift */,
+				C3CA8DA029F0E953005B1D25 /* EntriesCompletedMessage.swift */,
+				C3CA8DA229F0E95E005B1D25 /* TotalEntriesMessage.swift */,
+			);
+			path = GoalType;
+			sourceTree = "<group>";
+		};
+		C3CA8DA429F0EA06005B1D25 /* GoalStatus */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8DA529F0EA52005B1D25 /* EntriesRemaining.swift */,
+				C3CA8DA729F0EA66005B1D25 /* GetGoalStatusPresenter.swift */,
+				C3CA8DA929F0EA75005B1D25 /* PercentRemaining.swift */,
+				C3CA8DAB29F0EA8A005B1D25 /* UpdateTotalEntries.swift */,
+			);
+			path = GoalStatus;
+			sourceTree = "<group>";
+		};
+		C3CA8DAD29F0EB1B005B1D25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */,
+				C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */,
+				C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3CA8DB629F0EC0A005B1D25 /* GoalUseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */,
+				C3CA8DA429F0EA06005B1D25 /* GoalStatus */,
+				C3CA8D9729F0E89C005B1D25 /* GoalType */,
+			);
+			path = GoalUseCases;
+			sourceTree = "<group>";
+		};
+		C3CA8DB929F0ECD3005B1D25 /* InspirationalMessage */ = {
+			isa = PBXGroup;
+			children = (
+				C3CA8DBA29F0ED00005B1D25 /* InspirationalMessage.swift */,
+			);
+			path = InspirationalMessage;
 			sourceTree = "<group>";
 		};
 		C3CB923C29B01C550019AD0A /* GoalList */ = {
@@ -601,11 +691,9 @@
 				C334E5BA29A9910A00283217 /* ShapeExtension.swift in Sources */,
 				C3B92CA829A16858003A8C74 /* AlertBanner.swift in Sources */,
 				C358E2B329AECA3C00217EBB /* GoalDetailEditOptions.swift in Sources */,
-				C32B689529D677DE00E4BBB5 /* TimeIntervalConstants.swift in Sources */,
 				C3EEAB1229BD1FFE00A8D6B7 /* DefaultGoalStatusPresenter.swift in Sources */,
 				C372399B29B97D7A0058798D /* GoalUpdateView.swift in Sources */,
 				C3B92CA329A1681B003A8C74 /* BannerView.swift in Sources */,
-				C32B689129D6745A00E4BBB5 /* GoalNotification.swift in Sources */,
 				C3EAC8E229CBE0FA007BCB94 /* PercentRemaining.swift in Sources */,
 				C3EAC8CF29CBDE7C007BCB94 /* GoalRepeatOptions.swift in Sources */,
 				C3EEAB1029BD1FEF00A8D6B7 /* PercentGoalStatusPresenter.swift in Sources */,
@@ -646,7 +734,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3B92C7629A0632D003A8C74 /* CodingGoalsTests.swift in Sources */,
+				C3CA8D9B29F0E8CB005B1D25 /* GetGoalNoun.swift in Sources */,
+				C3CA8DA329F0E95E005B1D25 /* TotalEntriesMessage.swift in Sources */,
+				C3CA8D9F29F0E8EC005B1D25 /* GetGoalVerb.swift in Sources */,
+				C3CA8DAC29F0EA8A005B1D25 /* UpdateTotalEntries.swift in Sources */,
+				C3CA8D9D29F0E8E2005B1D25 /* GetGoalParticiple.swift in Sources */,
+				C3CA8DB129F0EB6F005B1D25 /* ShapeExtension.swift in Sources */,
+				C3CA8DA629F0EA52005B1D25 /* EntriesRemaining.swift in Sources */,
+				C3CA8DBB29F0ED00005B1D25 /* InspirationalMessage.swift in Sources */,
+				C3CA8DB329F0EB7F005B1D25 /* StringExtension.swift in Sources */,
+				C3CA8DBD29F0ED0E005B1D25 /* NotificationService.swift in Sources */,
+				C3CA8DAF29F0EB44005B1D25 /* ImageExtension.swift in Sources */,
+				C3CA8DA829F0EA66005B1D25 /* GetGoalStatusPresenter.swift in Sources */,
+				C3CA8DB829F0EC2D005B1D25 /* FriendlyGoalDescription.swift in Sources */,
+				C3CA8DA129F0E953005B1D25 /* EntriesCompletedMessage.swift in Sources */,
+				C3CA8DAA29F0EA75005B1D25 /* PercentRemaining.swift in Sources */,
+				C3CA8DB529F0EBD8005B1D25 /* DataStore.swift in Sources */,
+				C3CA8D9929F0E8C2005B1D25 /* GetGoalColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
