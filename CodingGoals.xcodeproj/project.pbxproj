@@ -53,6 +53,7 @@
 		C3CA8DB829F0EC2D005B1D25 /* FriendlyGoalDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */; };
 		C3CA8DBB29F0ED00005B1D25 /* InspirationalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DBA29F0ED00005B1D25 /* InspirationalMessage.swift */; };
 		C3CA8DBD29F0ED0E005B1D25 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DBC29F0ED0E005B1D25 /* NotificationService.swift */; };
+		C3CA8DBF29F0EDE5005B1D25 /* SampleGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DBE29F0EDE5005B1D25 /* SampleGoals.swift */; };
 		C3CB923E29B01C950019AD0A /* GoalListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB923D29B01C950019AD0A /* GoalListItem.swift */; };
 		C3D82DF929AA7C0D00A3BBB9 /* InspirationalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */; };
 		C3D82DFC29AC170800A3BBB9 /* GoalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */; };
@@ -149,6 +150,7 @@
 		C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyGoalDescription.swift; sourceTree = "<group>"; };
 		C3CA8DBA29F0ED00005B1D25 /* InspirationalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalMessage.swift; sourceTree = "<group>"; };
 		C3CA8DBC29F0ED0E005B1D25 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C3CA8DBE29F0EDE5005B1D25 /* SampleGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGoals.swift; sourceTree = "<group>"; };
 		C3CB923D29B01C950019AD0A /* GoalListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListItem.swift; sourceTree = "<group>"; };
 		C3D82DF829AA7C0D00A3BBB9 /* InspirationalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalMessage.swift; sourceTree = "<group>"; };
 		C3D82DFB29AC170800A3BBB9 /* GoalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalHistory.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B92C9929A161D8003A8C74 /* sampleGoals.json */,
+				C3CA8DBE29F0EDE5005B1D25 /* SampleGoals.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				C3EAC8E829CBE355007BCB94 /* GoalOverview.swift in Sources */,
 				C358E2B529AECB4B00217EBB /* GoalDetailEditBasic.swift in Sources */,
 				C3B92C9129A06529003A8C74 /* Goal.swift in Sources */,
+				C3CA8DBF29F0EDE5005B1D25 /* SampleGoals.swift in Sources */,
 				C3EAC8DA29CBDFA2007BCB94 /* EntriesCompletedMessage.swift in Sources */,
 				C334E5B829A984BD00283217 /* ImageExtension.swift in Sources */,
 				C3EAC8D229CBDF34007BCB94 /* GetGoalNoun.swift in Sources */,
