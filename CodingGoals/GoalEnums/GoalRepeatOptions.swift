@@ -11,7 +11,6 @@ enum GoalRepeatOptions: String, Codable, CaseIterable {
     case never = "Never"
     case everyday = "Every Day"
     case everyweek = "Every Week"
-    case everytwoweeks = "Every Two Weeks"
     case everymonth = "Every Month"
     case everyyear = "Every Year"
 }
