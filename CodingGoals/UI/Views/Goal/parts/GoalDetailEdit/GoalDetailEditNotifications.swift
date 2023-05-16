@@ -12,21 +12,23 @@ struct GoalDetailEditNotifications: View {
     @Binding var data: Goal.Data
     
     var body: some View {
-        Section("Notifications") {
-            Picker("Remind Me", selection: $data.notifications.remindMe) {
-                ForEach (GoalRemindMe.allCases, id: \.self) { goalRemindMe in
-                    Text(goalRemindMe.rawValue)
-                        .tag(goalRemindMe.rawValue)
+        if data.overview.deadline.hasValue {
+            Section("Notifications") {
+                Picker("Remind Me", selection: $data.notifications.remindMe) {
+                    ForEach (GoalRemindMe.allCases, id: \.self) { goalRemindMe in
+                        Text(goalRemindMe.rawValue)
+                            .tag(goalRemindMe.rawValue)
+                    }
                 }
-            }
-            Picker("Alert", selection: $data.notifications.alert) {
-                ForEach (GoalAlert.allCases, id: \.self) { goalAlert in
-                    Text(goalAlert.rawValue)
-                        .tag(goalAlert.rawValue)
+                Picker("Alert", selection: $data.notifications.alert) {
+                    ForEach (GoalAlert.allCases, id: \.self) { goalAlert in
+                        Text(goalAlert.rawValue)
+                            .tag(goalAlert.rawValue)
+                    }
                 }
+                Toggle("Show Alert Banner", isOn: $data.notifications.showAlertBanner)
+                Toggle("Show Congrats Banner", isOn: $data.notifications.showCongratsBanner)
             }
-            Toggle("Show Alert Banner", isOn: $data.notifications.showAlertBanner)
-            Toggle("Show Congrats Banner", isOn: $data.notifications.showCongratsBanner)
         }
     }
 }

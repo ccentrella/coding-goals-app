@@ -17,11 +17,11 @@ struct GoalDetailEditOptions: View {
             Toggle("Add Deadline", isOn: $data.overview.deadline.hasValue)
             if data.overview.deadline.hasValue {
                 DatePicker("Deadline", selection: $data.overview.deadline.date)
-            }
-            Picker("Repeat", selection: $data.repeat.repeatOption) {
-                ForEach (GoalRepeatOptions.allCases, id: \.self) { goalRepeat in
-                    Text(goalRepeat.rawValue)
-                        .tag(goalRepeat.rawValue)
+                Picker("Repeat", selection: $data.repeat.repeatOption) {
+                    ForEach (GoalRepeatOptions.allCases, id: \.self) { goalRepeat in
+                        Text(goalRepeat.rawValue)
+                            .tag(goalRepeat.rawValue)
+                    }
                 }
             }
         }
