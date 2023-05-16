@@ -7,10 +7,16 @@
 
 import Foundation
 import UserNotifications;
+import EventKit;
 
 class NotificationService {
     
     private static let calendar: Calendar = Calendar(identifier: .gregorian)
+    
+    public static func requestNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (bool, error) in }
+    }
     
     public static func addGoal(goal: Goal) async throws {
         
@@ -32,17 +38,7 @@ class NotificationService {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
     
-    public static func requestNotificationPermission() {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { granted, error in
-            
-            if let error = error {
-                // Handle the error here.
-            }
-            
-            // Enable or disable features based on the authorization.
-        }
-    }
+
     
     private static func addDeadlineNotification(goal: Goal) async throws {
         
@@ -100,27 +96,72 @@ class NotificationService {
     
     private static func addNotification(goal: Goal, date: Date, notification: String) async throws {
         
-        var dateComponents: DateComponents = calendar.dateComponents(in: .autoupdatingCurrent, from: date)
-        dateComponents.quarter = nil
+        let identifier = "\(goal.id.uuidString)_\(notification)"
+        let content: UNMutableNotificationContent = getNotificationContent(goal: goal)
+        let dateTrigger = getNotificationDate(repeatOption: goal.repeat.repeatOption, date: date)
+
+        let request: UNNotificationRequest = UNNotificationRequest(
+            identifier: identifier,
+            content: content,
+            trigger: dateTrigger)
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        try await notificationCenter.add(request)
+    }
+    
+    private static func getNotificationContent(goal: Goal) -> UNMutableNotificationContent {
         
         let content: UNMutableNotificationContent = UNMutableNotificationContent()
         content.title = "Goal Due Soon"
         content.body = "\(goal.friendlyDescription)"
         content.sound = .default
         
-        let trigger: UNCalendarNotificationTrigger = UNCalendarNotificationTrigger(
-            dateMatching: dateComponents,
-            repeats: false)
-        let request: UNNotificationRequest = UNNotificationRequest(
-            identifier: "\(goal.id.uuidString)_\(notification)",
-            content: content,
-            trigger: trigger)
-        
-        let notificationCenter = UNUserNotificationCenter.current()
-        try await notificationCenter.add(request)
-
+        return content
     }
     
+    private static func getNotificationDate(repeatOption: GoalRepeatOptions, date: Date) -> UNCalendarNotificationTrigger {
+        
+        let dateComponents: DateComponents
+        if (repeatOption == .never) {
+            dateComponents = generateNotificationDateWithoutRepeat(repeatOption: repeatOption, date: date)
+            return UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        } else {
+            dateComponents = generateNotificationDateWithRepeat(repeatOption: repeatOption, date: date)
+            return UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        }
+    }
+    
+    private static func generateNotificationDateWithoutRepeat(repeatOption: GoalRepeatOptions, date: Date) -> DateComponents {
+        
+        var dateComponents: DateComponents = calendar.dateComponents(in: .autoupdatingCurrent, from: date)
+        dateComponents.quarter = nil
+        
+        return dateComponents
+    }
+    
+    private static func generateNotificationDateWithRepeat(repeatOption: GoalRepeatOptions, date: Date) -> DateComponents {
+        
+        var dateComponents: DateComponents = generateNotificationDateWithoutRepeat(repeatOption: repeatOption, date: date)
+        dateComponents.year = nil
+        
+        switch (repeatOption) {
+        case .everyday:
+            dateComponents.weekday = nil
+            dateComponents.day = nil
+            dateComponents.month = nil
+        case .everyweek:
+            dateComponents.day = nil
+            dateComponents.month = nil
+        case .everymonth:
+            dateComponents.month = nil
+            dateComponents.weekday = nil
+        default:
+            dateComponents.weekday = nil
+        }
+        
+        return dateComponents
+    }
+
     private static func getMorningDate(date: Date) -> Date {
         
         var dateComponents: DateComponents = calendar.dateComponents(in: .autoupdatingCurrent, from: date)
