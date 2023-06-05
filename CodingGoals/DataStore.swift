@@ -12,15 +12,6 @@ public final class DataStore: ObservableObject {
 
     @Published var goals: [Goal] = SampleGoals.loadSampleGoals("sampleGoals.json")
     
-    func getBinding(goal: Goal) -> Binding<Goal> {
-        return Binding<Goal> {
-            return self.goals.first(where: { iterator in iterator.id == goal.id })!
-        } set: { newValue in
-            let goalIndex = self.goals.firstIndex(where: { iterator in iterator.id == goal.id })!
-            self.goals[goalIndex] = newValue
-        }
-    }
-    
     func loadGoals() {
         DataStore.load { result in
             switch (result) {
@@ -40,10 +31,19 @@ public final class DataStore: ObservableObject {
         }
     }
     
+    func getBinding(goal: Goal) -> Binding<Goal> {
+        return Binding<Goal> {
+            return self.goals.first(where: { iterator in iterator.id == goal.id })!
+        } set: { newValue in
+            let goalIndex = self.goals.firstIndex(where: { iterator in iterator.id == goal.id })!
+            self.goals[goalIndex] = newValue
+        }
+    }
+    
     private static func load(completion: @escaping (Result<[Goal], Error>) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             do {
-                let fileURL = try DataStore.fileURL()
+                let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
                         completion(.success([]))
@@ -66,7 +66,9 @@ public final class DataStore: ObservableObject {
     private static func save(goals: [Goal], completion: @escaping (Result<Int, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             do {
-                try writeToFile(goals: goals)
+                let data = try JSONEncoder().encode(goals)
+                let fileURL = try fileURL()
+                try data.write(to: fileURL)
                 DispatchQueue.main.async {
                     completion(.success(goals.count))
                 }
@@ -77,12 +79,6 @@ public final class DataStore: ObservableObject {
                 }
             }
         }
-    }
-    
-    private static func writeToFile(goals: [Goal]) throws {
-        let data = try JSONEncoder().encode(goals)
-        let fileURL = try fileURL()
-        try data.write(to: fileURL)
     }
     
     private static func fileURL() throws -> URL {
