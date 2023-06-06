@@ -17,6 +17,6 @@ extension GoalType {
         } else {
             noun = self.rawValue
         }
-        return noun.pluralize(count: count)
+        return noun.singularize(count: count)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    func pluralize(count: Int) -> String {
+    func singularize(count: Int) -> String {
         return count == 1 ? self.dropLast(1).description : self
     }
 }
