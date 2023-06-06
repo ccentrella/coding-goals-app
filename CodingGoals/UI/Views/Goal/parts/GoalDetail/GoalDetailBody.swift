@@ -21,12 +21,6 @@ struct GoalDetailBody: View {
             }
             Spacer()
         }
-        HStack {
-            Text(InspirationalMessage.getInspirationalMessage(goal: goal))
-                .font(.headline)
-                .padding(.top, 5.0)
-            Spacer()
-        }
         if !goal.notes.isEmpty {
             HStack {
                 Text("Notes: \(goal.notes)")
