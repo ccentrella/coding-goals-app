@@ -47,7 +47,6 @@
 		C3CA8DAA29F0EA75005B1D25 /* PercentRemaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DA929F0EA75005B1D25 /* PercentRemaining.swift */; };
 		C3CA8DAC29F0EA8A005B1D25 /* UpdateTotalEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DAB29F0EA8A005B1D25 /* UpdateTotalEntries.swift */; };
 		C3CA8DAF29F0EB44005B1D25 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */; };
-		C3CA8DB129F0EB6F005B1D25 /* ShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */; };
 		C3CA8DB329F0EB7F005B1D25 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */; };
 		C3CA8DB529F0EBD8005B1D25 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB429F0EBD8005B1D25 /* DataStore.swift */; };
 		C3CA8DB829F0EC2D005B1D25 /* FriendlyGoalDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */; };
@@ -142,7 +141,6 @@
 		C3CA8DA929F0EA75005B1D25 /* PercentRemaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentRemaining.swift; sourceTree = "<group>"; };
 		C3CA8DAB29F0EA8A005B1D25 /* UpdateTotalEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTotalEntries.swift; sourceTree = "<group>"; };
 		C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
-		C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
 		C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C3CA8DB429F0EBD8005B1D25 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		C3CA8DB729F0EC2D005B1D25 /* FriendlyGoalDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendlyGoalDescription.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				C3CA8DAE29F0EB44005B1D25 /* ImageExtension.swift */,
-				C3CA8DB029F0EB6F005B1D25 /* ShapeExtension.swift */,
 				C3CA8DB229F0EB7F005B1D25 /* StringExtension.swift */,
 			);
 			path = Extensions;
@@ -720,7 +717,6 @@
 				C3CA8D9F29F0E8EC005B1D25 /* GetGoalVerb.swift in Sources */,
 				C3CA8DAC29F0EA8A005B1D25 /* UpdateTotalEntries.swift in Sources */,
 				C3CA8D9D29F0E8E2005B1D25 /* GetGoalParticiple.swift in Sources */,
-				C3CA8DB129F0EB6F005B1D25 /* ShapeExtension.swift in Sources */,
 				C3CA8DA629F0EA52005B1D25 /* EntriesRemaining.swift in Sources */,
 				C3CA8DB329F0EB7F005B1D25 /* StringExtension.swift in Sources */,
 				C3CA8DBD29F0ED0E005B1D25 /* NotificationService.swift in Sources */,
