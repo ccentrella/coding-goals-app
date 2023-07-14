@@ -6,3 +6,16 @@
 //
 
 import Foundation
+@testable import CodingGoals
+import XCTest
+
+final class PercentRemainingTest: XCTest {
+    
+    func testPercentRemaining() {
+        let store: DataStore = DataStore()
+        let goal: Goal = store.goals[0]
+        let percentRemaining = 1 - goal.status.percentCompleted
+        
+        assert(goal.status.percentRemaining == percentRemaining)
+    }
+}

@@ -334,7 +334,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "22842F4B-A7F8-4347-BFDD-C351B034EB9D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingGoals/UI/Views/Banner/OverviewBanner.swift"
@@ -359,6 +359,22 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "testSaveGoals()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93BD18BB-12DF-4B00-A596-119D6DCE263E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoalsTests/Extensions/ShapeExtension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "testFill()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
