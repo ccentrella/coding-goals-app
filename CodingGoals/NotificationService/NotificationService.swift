@@ -38,8 +38,6 @@ class NotificationService {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
     
-
-    
     private static func addDeadlineNotification(goal: Goal) async throws {
         
         let date: Date = goal.overview.deadline.date
