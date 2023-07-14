@@ -9,7 +9,7 @@ import Foundation
 @testable import CodingGoals
 import XCTest
 
-final class EntriesCmpletedMessageTest: XCTest {
+final class EntriesCmpletedMessageTest: XCTestCase {
     
     func testEntriesCompletedMessage() {
         let pages: GoalType = .pages

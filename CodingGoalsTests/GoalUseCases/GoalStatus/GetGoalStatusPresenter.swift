@@ -9,7 +9,7 @@ import Foundation
 @testable import CodingGoals
 import XCTest
 
-final class GetGoalStatusPresenterTest: XCTest {
+final class GetGoalStatusPresenterTest: XCTestCase {
     
     func testDefaultPercenter() {
         let store: DataStore = DataStore()

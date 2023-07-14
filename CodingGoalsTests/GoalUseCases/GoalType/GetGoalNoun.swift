@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import SwiftUI
 
-final class GetGoalNounTest: XCTest {
+final class GetGoalNounTest: XCTestCase {
     
     func testGetGoalNoun() {
         let pages: GoalType = .pages

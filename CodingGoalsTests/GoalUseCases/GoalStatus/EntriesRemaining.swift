@@ -9,7 +9,7 @@ import Foundation
 @testable import CodingGoals
 import XCTest
 
-final class EntriesRemainingTest: XCTest {
+final class EntriesRemainingTest: XCTestCase {
     
     func testEntriesRemaining() {
         let store: DataStore = DataStore()

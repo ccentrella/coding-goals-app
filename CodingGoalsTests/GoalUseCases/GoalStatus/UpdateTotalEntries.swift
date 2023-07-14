@@ -9,7 +9,7 @@ import Foundation
 @testable import CodingGoals
 import XCTest
 
-final class UpdateTotalEntiesTest: XCTest {
+final class UpdateTotalEntiesTest: XCTestCase {
     
     func testUpdateTotalEntriesInit() {
         let status: GoalStatus = GoalStatus(totalEntries: 29342934)

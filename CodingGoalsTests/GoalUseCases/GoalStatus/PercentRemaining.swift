@@ -9,7 +9,7 @@ import Foundation
 @testable import CodingGoals
 import XCTest
 
-final class PercentRemainingTest: XCTest {
+final class PercentRemainingTest: XCTestCase {
     
     func testPercentRemaining() {
         let store: DataStore = DataStore()

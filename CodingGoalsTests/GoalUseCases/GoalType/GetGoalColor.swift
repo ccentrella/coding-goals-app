@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import SwiftUI
 
-final class GetGoalColorTest: XCTest {
+final class GetGoalColorTest: XCTestCase {
     
     func testGetGoalColor() {
         let pages: GoalType = .pages
