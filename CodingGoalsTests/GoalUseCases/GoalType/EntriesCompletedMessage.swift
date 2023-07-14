@@ -19,11 +19,11 @@ final class EntriesCmpletedMessageTest: XCTestCase {
         let articles: GoalType = .articles
         let apps: GoalType = .apps
         
-        assert(pages.getEntriesCompletedMessage() == "pages read", "wrong entries completed message being returned for pages")
-        assert(books.getEntriesCompletedMessage() == "books read", "wrong entries completed message being returned for books")
-        assert(videos.getEntriesCompletedMessage() == "videos watched", "wrong entries completed message being returned for videos")
-        assert(functions.getEntriesCompletedMessage() == "functions created", "wrong entries completed message being returned for functions")
-        assert(articles.getEntriesCompletedMessage() == "articles read", "wrong entries completed message being returned for articles")
-        assert(apps.getEntriesCompletedMessage() == "apps created", "wrong entries completed message being returned for apps")
+        assert(pages.getEntriesCompletedMessage() == "Pages read", "wrong entries completed message being returned for pages")
+        assert(books.getEntriesCompletedMessage() == "Pages read", "wrong entries completed message being returned for books")
+        assert(videos.getEntriesCompletedMessage() == "Videos watched", "wrong entries completed message being returned for videos")
+        assert(functions.getEntriesCompletedMessage() == "Functions created", "wrong entries completed message being returned for functions")
+        assert(articles.getEntriesCompletedMessage() == "Pages read", "wrong entries completed message being returned for articles")
+        assert(apps.getEntriesCompletedMessage() == "Apps created", "wrong entries completed message being returned for apps")
     }
 }

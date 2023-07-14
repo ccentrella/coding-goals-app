@@ -20,10 +20,10 @@ final class TotalEntriesMessageTest: XCTestCase {
         let apps: GoalType = .apps
         
         assert(pages.getTotalEntriesMessage() == "Total pages", "wrong total entries message being returned for pages")
-        assert(books.getTotalEntriesMessage() == "Total books", "wrong total entries message being returned for books")
+        assert(books.getTotalEntriesMessage() == "Total pages", "wrong total entries message being returned for books")
         assert(videos.getTotalEntriesMessage() == "Total videos", "wrong total entries message being returned for videos")
         assert(functions.getTotalEntriesMessage() == "Total functions", "wrong total entries message being returned for functions")
-        assert(articles.getTotalEntriesMessage() == "Total articles", "wrong total entries message being returned for articles")
+        assert(articles.getTotalEntriesMessage() == "Total pages", "wrong total entries message being returned for articles")
         assert(apps.getTotalEntriesMessage() == "Total apps", "wrong total entries message being returned for apps")
     }
 }

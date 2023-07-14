@@ -21,10 +21,10 @@ final class GetGoalNounTest: XCTestCase {
         let apps: GoalType = .apps
         
         assert(pages.getNoun(count: 5) == "pages", "wrong noun being returned for pages")
-        assert(books.getNoun(count: 5) == "books", "wrong noun being returned for books")
+        assert(books.getNoun(count: 5) == "pages", "wrong noun being returned for books")
         assert(videos.getNoun(count: 5) == "videos", "wrong noun being returned for videos")
         assert(functions.getNoun(count: 5) == "functions", "wrong noun being returned for functions")
-        assert(articles.getNoun(count: 5) == "articles", "wrong noun being returned for articles")
+        assert(articles.getNoun(count: 5) == "pages", "wrong noun being returned for articles")
         assert(apps.getNoun(count: 5) == "apps", "wrong noun being returned for apps")
     }
 }
