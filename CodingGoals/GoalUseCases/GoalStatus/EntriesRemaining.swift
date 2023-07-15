@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension GoalStatus {
+extension GoalProgress {
     
     var entriesRemaining: Int {
         totalEntries - entriesCompleted

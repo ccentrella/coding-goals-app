@@ -12,7 +12,7 @@ import XCTest
 final class UpdateTotalEntiesTest: XCTestCase {
     
     func testUpdateTotalEntriesInit() {
-        let status: GoalStatus = GoalStatus(totalEntries: 29342934)
+        let status: GoalProgress = GoalProgress(totalEntries: 29342934)
       
         assert(status.totalEntries == 29342934)
     }
@@ -21,8 +21,8 @@ final class UpdateTotalEntiesTest: XCTestCase {
         let store: DataStore = DataStore()
         var goal: Goal = store.goals[0]
         
-        goal.status.updateTotal(29342934)
+        goal.progress.updateTotal(29342934)
         
-        assert(goal.status.totalEntries == 29342934)
+        assert(goal.progress.totalEntries == 29342934)
     }
 }

@@ -14,8 +14,8 @@ class DefaultGoalStatusPresenter: GoalStatusPresenter {
     }
     
     func getProgressMessage(goal: Goal) -> String {
-        let entriesRemaining = goal.status.entriesRemaining
-        let type = goal.overview.type.getNoun(count: goal.status.entriesRemaining)
+        let entriesRemaining = goal.progress.entriesRemaining
+        let type = goal.overview.type.getNoun(count: goal.progress.entriesRemaining)
         let verb = goal.overview.type.getVerb().lowercased()
         
         return "\(entriesRemaining) \(type) to \(verb)"

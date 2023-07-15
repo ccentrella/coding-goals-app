@@ -18,16 +18,16 @@ struct GoalListView: View {
         NavigationStack(path: $path) {
             List {
                 let upcomingGoals: [Goal] = store.goals.filter({ goal in
-                    goal.status.dueSoon
+                    goal.progress.dueSoon
                 })
                 let recentlyCompletedGoals: [Goal] = store.goals.filter({ goal in
-                    goal.status.isRecentlyComplete
+                    goal.progress.isRecentlyComplete
                 })
                 let todoGoals: [Goal] = store.goals.filter({ goal in
-                    !goal.status.isRecentlyComplete && !goal.status.isComplete
+                    !goal.progress.isRecentlyComplete && !goal.progress.isComplete
                 })
                 let completedGoals: [Goal] = store.goals.filter({ goal in
-                    goal.status.isComplete
+                    goal.progress.isComplete
                 })
                 
                 GoalListAlert(upcomingGoals: upcomingGoals, recentlyCompletedGoals: recentlyCompletedGoals)

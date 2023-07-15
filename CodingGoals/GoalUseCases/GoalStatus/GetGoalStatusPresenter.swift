@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension GoalStatus {
+extension GoalProgress {
     
     var presenter: GoalStatusPresenter {
         isPercent ? PercentGoalStatusPresenter() : DefaultGoalStatusPresenter()

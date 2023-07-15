@@ -14,6 +14,6 @@ class PercentGoalStatusPresenter: GoalStatusPresenter {
     }
     
     func getProgressMessage(goal: Goal) -> String {
-        "\(goal.status.percentRemaining.formatted(.percent)) remaining"
+        "\(goal.progress.percentRemaining.formatted(.percent)) remaining"
     }
 }

@@ -27,7 +27,7 @@ struct OverviewBanner: BannerView {
                         Text("At A Glance")
                             .font(.title2)
                             .bold()
-                        Text(goal.status.presenter.getProgressMessage(goal: goal))
+                        Text(goal.progress.presenter.getProgressMessage(goal: goal))
                             .font(.callout)
                             .bold()
                             .padding(.bottom, 25.0)
@@ -36,8 +36,8 @@ struct OverviewBanner: BannerView {
                     Spacer()
                 }
                 HStack {
-                    Gauge(value: goal.status.percentCompleted) {
-                        Text(goal.status.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
+                    Gauge(value: goal.progress.percentCompleted) {
+                        Text(goal.progress.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
                     }
                     .gaugeStyle(.accessoryCircularCapacity)
                     .colorScheme(.light)

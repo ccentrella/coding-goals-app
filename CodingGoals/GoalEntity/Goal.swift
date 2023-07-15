@@ -11,11 +11,11 @@ struct Goal: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var overview: GoalOverview = GoalOverview() {
         willSet {
-            self.status.updateTotal(newValue.length)
+            self.progress.updateTotal(newValue.length)
         }
     }
     var `repeat`: GoalRepeat = GoalRepeat()
     var notifications: GoalNotifications = GoalNotifications()
-    var status: GoalStatus = GoalStatus()
+    var progress: GoalProgress = GoalProgress()
     var notes: String = ""
 }

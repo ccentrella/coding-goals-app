@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension GoalStatus {
+extension GoalProgress {
     
     init(totalEntries: Int) {
         self.totalEntries = totalEntries

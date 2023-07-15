@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct GoalStatus: Codable, Hashable {
+struct GoalProgress: Codable, Hashable {
     
     var entriesCompleted: Int = 0 {
         didSet {

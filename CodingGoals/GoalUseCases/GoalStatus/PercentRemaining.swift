@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension GoalStatus {
+extension GoalProgress {
     
     var percentRemaining: Double {
         1 - percentCompleted

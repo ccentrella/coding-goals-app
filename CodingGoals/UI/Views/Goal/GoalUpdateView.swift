@@ -13,35 +13,35 @@ struct GoalUpdateView: View {
     var body: some View {
         NavigationStack {
             Form {
-                if goal.status.isPercent {
+                if goal.progress.isPercent {
                     VStack(alignment: .leading) {
-                        Slider(value: $goal.status.percentCompleted, in: 0...1, step: 0.01) {
+                        Slider(value: $goal.progress.percentCompleted, in: 0...1, step: 0.01) {
                             Text("Progress")
                         }
-                        Text("\(goal.status.percentCompleted.formatted(.percent)) completed")
+                        Text("\(goal.progress.percentCompleted.formatted(.percent)) completed")
                     }
                 }
                 else {
-                    Stepper(value: $goal.status.entriesCompleted, in: 0...goal.status.totalEntries) {
+                    Stepper(value: $goal.progress.entriesCompleted, in: 0...goal.progress.totalEntries) {
                         HStack {
                             Text(goal.overview.type.getEntriesCompletedMessage())
                             Spacer()
-                            Text(String(goal.status.entriesCompleted))
+                            Text(String(goal.progress.entriesCompleted))
                                 .padding(.trailing, 10.0)
                         }
                     }
                 }
-                if goal.status.presenter.isTotalVisible(goal: goal) {
-                    Stepper(value: $goal.status.totalEntries) {
+                if goal.progress.presenter.isTotalVisible(goal: goal) {
+                    Stepper(value: $goal.progress.totalEntries) {
                         HStack {
                             Text(goal.overview.type.getTotalEntriesMessage())
                             Spacer()
-                            Text(String(goal.status.totalEntries))
+                            Text(String(goal.progress.totalEntries))
                                 .padding(.trailing, 10.0)
                         }
                     }
                 }
-                Toggle("Show percent", isOn: $goal.status.isPercent)
+                Toggle("Show percent", isOn: $goal.progress.isPercent)
             }
             .navigationTitle("Update Progress")
             .navigationBarTitleDisplayMode(.inline)

@@ -27,7 +27,7 @@ extension Goal {
         self.overview = data.overview
         self.repeat = data.repeat
         self.notifications = data.notifications
-        self.status = GoalStatus(totalEntries: overview.length)
+        self.progress = GoalProgress(totalEntries: overview.length)
         self.notes = data.notes
     }
     
