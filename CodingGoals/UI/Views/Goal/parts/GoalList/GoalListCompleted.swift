@@ -10,12 +10,16 @@ import SwiftUI
 struct GoalListCompleted: View {
     
     @EnvironmentObject var store: DataStore
-    let goals: [Goal]
+    var filteredGoals: [Goal] {
+        store.goals.filter({ goal in
+            goal.progress.status == .completed || goal.progress.status == .recentlyCompleted
+        })
+    }
     
     var body: some View {
-        if !goals.isEmpty {
+        if !filteredGoals.isEmpty {
             Section("Completed") {
-                GoalList(goals: goals)
+                GoalList(goals: filteredGoals)
             }
         }
     }
@@ -23,8 +27,7 @@ struct GoalListCompleted: View {
 
 struct GoalListCompleted_Previews: PreviewProvider {
     static var previews: some View {
-        let store: DataStore = DataStore()
-        GoalListCompleted(goals: store.goals)
-            .environmentObject(store)
+        GoalListCompleted()
+            .environmentObject(DataStore())
     }
 }

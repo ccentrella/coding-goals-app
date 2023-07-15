@@ -15,26 +15,21 @@ struct GoalListView: View {
     @State private var data: Goal.Data = Goal.Data()
     
     var body: some View {
+        let goalsWithoutAlert: [Goal] = store.goals.filter({ goal in
+            goal.progress.status == .todo  || goal.progress.status == .completed
+        })
+        let grouped = GroupedListStyle.grouped
+        let automatic = DefaultListStyle.automatic
+        let test: any ListStyle = goalsWithoutAlert.count == store.goals.count ? automatic : grouped
         NavigationStack(path: $path) {
-            List {
-                let upcomingGoals: [Goal] = store.goals.filter({ goal in
-                    goal.progress.dueSoon
-                })
-                let recentlyCompletedGoals: [Goal] = store.goals.filter({ goal in
-                    goal.progress.isRecentlyComplete
-                })
-                let todoGoals: [Goal] = store.goals.filter({ goal in
-                    !goal.progress.isRecentlyComplete && !goal.progress.isComplete
-                })
-                let completedGoals: [Goal] = store.goals.filter({ goal in
-                    goal.progress.isComplete
-                })
-                
-                GoalListAlert(upcomingGoals: upcomingGoals, recentlyCompletedGoals: recentlyCompletedGoals)
-                GoalListTodo(goals: todoGoals)
-                GoalListCompleted(goals: completedGoals)
-            }
-            .listStyle(.grouped)
+            AnyView(
+                List {
+                    GoalListAlert()
+                    GoalListTodo()
+                    GoalListCompleted()
+                }
+                .listStyle(test)
+            )
             .navigationDestination(for: Goal.self) { goal in
                 GoalDetailView(goal: store.getBinding(goal: goal))
             }

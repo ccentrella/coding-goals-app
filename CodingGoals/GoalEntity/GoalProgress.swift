@@ -1,5 +1,5 @@
 //
-//  GoalStatus.swift
+//  GoalProgress.swift
 //  Coding Goals App
 //
 //  Created by Christopher Centrella on 3/7/23.
@@ -27,16 +27,10 @@ struct GoalProgress: Codable, Hashable {
     }
     var isPercent: Bool = false
     
-    var dueSoon: Bool {
-        return true
+    var status: GoalStatus {
+        GoalStatus.todo
     }
-    var isRecentlyComplete: Bool {
-        return true
-    }
-    var isComplete : Bool {
-        return true
-    }
-    
+
     private mutating func updatePercent() {
         let percent = Double(entriesCompleted) / Double(totalEntries)
         let roundedPercent = round(percent * 100) / 100
