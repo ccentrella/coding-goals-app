@@ -15,6 +15,11 @@ class NotificationService {
     @Environment(\.notificationPermissionsEnabled) private static var notificationPermissionsEnabled
     
     private static let calendar: Calendar = Calendar(identifier: .gregorian)
+
+    public static func requestNotificationPermission() {
+        let center: UNUserNotificationCenter = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (granted, error) in }
+    }
     
     public static func notificationsEnabled(completion: @escaping (Bool) -> Void){
         var authorized: Bool = false
@@ -25,11 +30,6 @@ class NotificationService {
         }
     }
 
-    public static func requestNotificationPermission() {
-        let center: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (granted, error) in }
-    }
-    
     public static func showNotificationSettings() {
         if let settingsURL: URL = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(settingsURL)
@@ -130,7 +130,7 @@ class NotificationService {
         
         let content: UNMutableNotificationContent = UNMutableNotificationContent()
         content.title = "Goal Due Soon"
-        content.body = "\(goal.friendlyDescription)"
+        content.body = goal.friendlyDescription
         content.sound = .default
         
         return content
