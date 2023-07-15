@@ -41,7 +41,7 @@ struct GoalDetailEditView: View {
                     }
                 }
                 if data.overview.deadline.hasValue && !notificationsEnabled {
-                    AlertBanner(heading: "Notifications Disabled", description: "You can enable notifications through Settings.", invert: true)
+                    AlertBanner(heading: "Notifications Disabled", description: "To access full app functionality, enable notifications.", actionText: "Enable Notifications", onClick: { NotificationService.showNotificationSettings() }, invert: true)
                         .padding()
                         .padding(.top, 15)
                 }

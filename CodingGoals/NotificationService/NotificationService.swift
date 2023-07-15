@@ -30,6 +30,12 @@ class NotificationService {
         center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (granted, error) in }
     }
     
+    public static func showNotificationSettings() {
+        if let settingsURL: URL = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(settingsURL)
+        }
+    }
+    
     public static func addGoal(goal: Goal) async throws {
         
         if (goal.overview.deadline.hasValue) {

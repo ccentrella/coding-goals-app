@@ -32,7 +32,7 @@ struct GoalDetailBody: View {
             }
             Spacer()
             if goal.overview.deadline.hasValue && !notificationsEnabled {
-                AlertBanner(heading: "Notifications Disabled", description: "You can enable notifications through Settings.")
+                AlertBanner(heading: "Notifications Disabled", description: "To access full app functionality, enable notifications.", actionText: "Enable Notifications", onClick: { NotificationService.showNotificationSettings() })
                     .padding(.top, 15)
             }
         }
