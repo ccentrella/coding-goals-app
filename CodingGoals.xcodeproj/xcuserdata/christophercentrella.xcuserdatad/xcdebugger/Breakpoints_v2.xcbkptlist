@@ -456,5 +456,193 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9BAE616-C614-4882-954F-47C36278F48E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoals/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "addGoal(goal:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A98C0B6-9476-40A0-9287-6D4116C4A754"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoals/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "addDeadlineNotification(goal:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoals/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "addNotification(goal:date:notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - 5b6c9b03fb9e3a38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "920">
+               </Location>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - ccf51d5cfbafd001"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - b971736465a77e1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - b971736465a77e3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - ee8ba75623581c1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "93648BFB-2E3B-429F-9D53-24C28C3A9B12 - ee8ba75623581c3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static CodingGoals.NotificationService.addNotification(goal: CodingGoals.Goal, date: Foundation.Date, notification: Swift.String) async throws -&gt; ()"
+                  moduleName = "CodingGoals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christophercentrella/github/CodingGoals/CodingGoals/NotificationService/NotificationService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0176C427-31DD-4765-AA59-644E57DE72A1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoalsTests/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B624FC97-EA39-4D98-9D47-57423956EC9E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoalsTests/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C334EC3-B0E4-48B6-9304-A4A4391A8481"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoalsTests/NotificationService/NotificationService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -17,22 +17,24 @@ struct GoalListView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List {
+                let upcomingGoals: [Goal] = store.goals.filter({ goal in
+                    goal.status.dueSoon
+                })
+                let recentlyCompletedGoals: [Goal] = store.goals.filter({ goal in
+                    goal.status.isRecentlyComplete
+                })
+                let todoGoals: [Goal] = store.goals.filter({ goal in
+                    !goal.status.isRecentlyComplete && !goal.status.isComplete
+                })
+                let completedGoals: [Goal] = store.goals.filter({ goal in
+                    goal.status.isComplete
+                })
                 
-                if store.goals.count == 0 {
-                    Text("Welcome! Begin by creating a goal.")
-                }
-                
-                ForEach (store.goals) { goal in
-                    GoalListItem(goal: goal)
-                }
-                .onDelete { offsets in
-                    offsets.forEach({ offset in
-                        let goal = store.goals[offset]
-                        NotificationService.removeGoal(goalId: goal.id)
-                    })
-                    store.goals.remove(atOffsets: offsets)
-                }
+                GoalListAlert(upcomingGoals: upcomingGoals, recentlyCompletedGoals: recentlyCompletedGoals)
+                GoalListTodo(goals: todoGoals)
+                GoalListCompleted(goals: completedGoals)
             }
+            .listStyle(.grouped)
             .navigationDestination(for: Goal.self) { goal in
                 GoalDetailView(goal: store.getBinding(goal: goal))
             }

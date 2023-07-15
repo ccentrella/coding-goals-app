@@ -27,6 +27,16 @@ struct GoalStatus: Codable, Hashable {
     }
     var isPercent: Bool = false
     
+    var dueSoon: Bool {
+        return true
+    }
+    var isRecentlyComplete: Bool {
+        return true
+    }
+    var isComplete : Bool {
+        return true
+    }
+    
     private mutating func updatePercent() {
         let percent = Double(entriesCompleted) / Double(totalEntries)
         let roundedPercent = round(percent * 100) / 100
