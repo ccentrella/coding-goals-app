@@ -10,21 +10,30 @@ import SwiftUI
 struct GoalDetailBody: View {
     
     let goal: Goal
+    @Environment(\.notificationPermissionsEnabled) private var notificationsEnabled
+    
     var body: some View {
-        HStack(alignment: .top) {
-            if goal.overview.deadline.hasValue {
-                Image(systemName: "clock")
-                Text("Due \(goal.overview.deadline.date.formatted(date: .complete, time: .shortened))")
+        VStack {
+            HStack(alignment: .top) {
+                if goal.overview.deadline.hasValue {
+                    Image(systemName: "clock")
+                    Text("Due \(goal.overview.deadline.date.formatted(date: .complete, time: .shortened))")
+                }
+                else {
+                    Label("No deadline specified", systemImage: "clock")
+                }
+                Spacer()
             }
-            else {
-                Label("No deadline specified", systemImage: "clock")
+            if !goal.notes.isEmpty {
+                HStack {
+                    Text("Notes: \(goal.notes)")
+                    Spacer()
+                }
             }
             Spacer()
-        }
-        if !goal.notes.isEmpty {
-            HStack {
-                Text("Notes: \(goal.notes)")
-                Spacer()
+            if goal.overview.deadline.hasValue && !notificationsEnabled {
+                AlertBanner(heading: "Notifications Disabled", description: "You can enable notifications through Settings.")
+                    .padding(.top, 15)
             }
         }
     }

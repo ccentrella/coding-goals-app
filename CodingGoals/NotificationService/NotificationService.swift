@@ -8,14 +8,26 @@
 import Foundation
 import UserNotifications;
 import EventKit;
+import SwiftUI
 
 class NotificationService {
     
+    @Environment(\.notificationPermissionsEnabled) private static var notificationPermissionsEnabled
+    
     private static let calendar: Calendar = Calendar(identifier: .gregorian)
     
-    public static func requestNotificationPermission() {
+    public static func notificationsEnabled(completion: @escaping (Bool) -> Void){
+        var authorized: Bool = false
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (bool, error) in }
+        center.getNotificationSettings { (settings) in
+            authorized = settings.authorizationStatus == .authorized
+            completion(authorized)
+        }
+    }
+
+    public static func requestNotificationPermission() {
+        let center: UNUserNotificationCenter = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (granted, error) in }
     }
     
     public static func addGoal(goal: Goal) async throws {
@@ -29,14 +41,15 @@ class NotificationService {
     
     public static func removeGoal(goalId: UUID) {
         
-        let deadline_identifier = "\(goalId)_deadline"
-        let alert_identifier = "\(goalId)_alert"
-        let remindme_identifier = "\(goalId)_remindme"
+        let deadline_identifier: String = "\(goalId)_deadline"
+        let alert_identifier: String = "\(goalId)_alert"
+        let remindme_identifier: String = "\(goalId)_remindme"
         let identifiers: [String] = [deadline_identifier, alert_identifier, remindme_identifier]
         
-        let notificationCenter = UNUserNotificationCenter.current()
+        let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
+    
     
     private static func addDeadlineNotification(goal: Goal) async throws {
         

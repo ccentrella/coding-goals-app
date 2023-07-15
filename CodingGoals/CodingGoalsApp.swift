@@ -13,6 +13,8 @@ struct CodingGoalsApp: App {
     @StateObject private var dataStore = DataStore()
     @Environment(\.scenePhase) private var scenePhase
     
+    @State private var notificationsEnabled: Bool = false
+    
     var body: some Scene {
         WindowGroup {
             GoalListView()
@@ -25,7 +27,12 @@ struct CodingGoalsApp: App {
                     if phase == .inactive {
                         dataStore.saveGoals()
                     }
-                }
+                    if phase == .active {
+                        NotificationService.notificationsEnabled(completion: { authorized in
+                           notificationsEnabled = authorized
+                        })
+                    }
+                }.environment(\.notificationPermissionsEnabled, notificationsEnabled)
         }
     }
     

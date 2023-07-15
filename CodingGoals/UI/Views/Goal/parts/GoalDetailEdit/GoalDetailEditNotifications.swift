@@ -10,9 +10,10 @@ import SwiftUI
 struct GoalDetailEditNotifications: View {
     
     @Binding var data: Goal.Data
+    @Environment(\.notificationPermissionsEnabled) private var notificationsEnabled
     
     var body: some View {
-        if data.overview.deadline.hasValue {
+        if data.overview.deadline.hasValue && notificationsEnabled {
             Section("Notifications") {
                 Picker("Remind Me", selection: $data.notifications.remindMe) {
                     ForEach (GoalRemindMe.allCases, id: \.self) { goalRemindMe in
