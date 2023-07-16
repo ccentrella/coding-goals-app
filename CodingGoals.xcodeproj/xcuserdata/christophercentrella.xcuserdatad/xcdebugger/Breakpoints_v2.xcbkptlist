@@ -592,8 +592,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
-            landmarkType = "7">
+            landmarkName = "NotificationServiceTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -608,8 +608,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
-            landmarkType = "7">
+            landmarkName = "NotificationServiceTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,8 +624,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "testAddGoalWithNonRepeatingDeadlineOnly()"
-            landmarkType = "7">
+            landmarkName = "NotificationServiceTest"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -737,6 +737,22 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "load(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53C4DB75-A931-4EE4-B63B-881D6D538587"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingGoals/GoalEntity/GoalProgress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "updateEntriesCompleted()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

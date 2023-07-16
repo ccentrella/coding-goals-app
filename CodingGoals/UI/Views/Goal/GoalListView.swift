@@ -16,7 +16,7 @@ struct GoalListView: View {
     
     var body: some View {
         let goalsWithoutAlert: [Goal] = store.goals.filter({ goal in
-            goal.progress.status == .todo  || goal.progress.status == .completed
+            goal.status == .todo || goal.status == .completed
         })
         let grouped = GroupedListStyle.grouped
         let automatic = DefaultListStyle.automatic

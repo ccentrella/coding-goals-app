@@ -12,7 +12,7 @@ struct GoalListCompleted: View {
     @EnvironmentObject var store: DataStore
     var filteredGoals: [Goal] {
         store.goals.filter({ goal in
-            goal.progress.status == .completed || goal.progress.status == .recentlyCompleted
+            goal.status == .completed || goal.status == .recentlyCompleted
         })
     }
     
