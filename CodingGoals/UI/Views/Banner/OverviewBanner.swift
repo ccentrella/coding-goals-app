@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OverviewBanner: BannerView {
+struct OverviewBanner: View {
     
     let goal: Goal
     let onClick: () -> Void

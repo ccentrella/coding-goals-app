@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CongratsBanner: BannerView {
+struct CongratsBanner: View {
 
     init(heading: String, description: String, actionText: String?=nil, onClick: (() -> Void)?=nil, invert: Bool = false) {
         self.heading = heading
@@ -48,12 +48,15 @@ struct CongratsBanner: BannerView {
                         .bold()
                     Spacer()
                 }
-                Text(description)
-                    .font(.callout)
-                    .bold()
-                    .padding(.top, 10.0)
-                    .padding(.bottom, 15.0)
+                HStack {
+                    Text(description)
+                        .font(.callout)
+                        .bold()
+                        .padding(.top, 10.0)
+                        .padding(.bottom, 15.0)
                     .foregroundColor(text)
+                    Spacer()
+                }
                 if actionText != nil && onClick != nil {
                     HStack {
                         Spacer()
