@@ -39,8 +39,8 @@ struct GoalListAlert: View {
                 else {
                     AlertBanner(heading: "Overdue", description: "You have multiple goals which are overdue.", invert: true)
                         .padding()
-                    GoalList(goals: overdueGoals)
                 }
+                GoalList(goals: overdueGoals)
             }
         }
         else if !upcomingGoals.isEmpty {
@@ -52,8 +52,8 @@ struct GoalListAlert: View {
                 else {
                     AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", invert: true)
                         .padding()
-                    GoalList(goals: upcomingGoals)
                 }
+                GoalList(goals: upcomingGoals)
             }
         }
         else if !recentlyCompletedGoals.isEmpty {
@@ -66,8 +66,8 @@ struct GoalListAlert: View {
                 else {
                     CongratsBanner(heading: "Great Job!", description: "You have completed multiple goals.", invert: true)
                         .padding()
-                    GoalList(goals: recentlyCompletedGoals)
                 }
+                GoalList(goals: recentlyCompletedGoals)
             }
         }
     }
