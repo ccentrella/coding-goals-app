@@ -14,6 +14,13 @@ class PercentGoalStatusPresenter: GoalStatusPresenter {
     }
     
     func getProgressMessage(goal: Goal) -> String {
-        "\(goal.progress.percentRemaining.formatted(.percent)) remaining"
+        var message: String
+        if goal.progress.percentRemaining > 0.0 {
+            message = "\(goal.progress.percentRemaining.formatted(.percent)) remaining"
+        }
+        else {
+            message = "Complete"
+        }
+        return message
     }
 }

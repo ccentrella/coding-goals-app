@@ -17,8 +17,15 @@ class DefaultGoalStatusPresenter: GoalStatusPresenter {
         let entriesRemaining = goal.progress.entriesRemaining
         let type = goal.overview.type.getNoun(count: goal.progress.entriesRemaining)
         let verb = goal.overview.type.getVerb().lowercased()
+        var message: String
         
-        return "\(entriesRemaining) \(type) to \(verb)"
+        if goal.progress.percentRemaining > 0.0 {
+            message = "\(entriesRemaining) \(type) to \(verb)"
+        }
+        else {
+            message = "Complete"
+        }
+        return message
     }
     
     private func isArticlesOrBooks(goal: Goal) -> Bool {

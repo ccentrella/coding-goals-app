@@ -36,11 +36,24 @@ struct OverviewBanner: View {
                     Spacer()
                 }
                 HStack {
-                    Gauge(value: goal.progress.percentCompleted) {
-                        Text(goal.progress.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
+                    if goal.progress.percentCompleted < 1.0 {
+                        Gauge(value: goal.progress.percentCompleted) {
+                            Text(goal.progress.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
+                        }
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .colorScheme(.light)
                     }
-                    .gaugeStyle(.accessoryCircularCapacity)
-                    .colorScheme(.light)
+                    else {
+                        ZStack {
+                            Circle()
+                                .fill(Color(hue: 0.40, saturation: 1, brightness: 0.5))
+                                .frame(height: 60)
+                            Image(systemName: "checkmark")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .imageScale(.large)
+                        }
+                    }
                     Spacer()
                     Button(action: { onClick() }) {
                         Text("Update")
