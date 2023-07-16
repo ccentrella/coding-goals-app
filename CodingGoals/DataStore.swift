@@ -43,7 +43,7 @@ public final class DataStore: ObservableObject {
     private static func load(completion: @escaping (Result<[Goal], Error>) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             do {
-                
+
                 // If file doesn't exist, just return an empty array
                 let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {

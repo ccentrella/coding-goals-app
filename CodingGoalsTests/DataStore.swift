@@ -14,16 +14,17 @@ final class DataStoreTest: XCTestCase {
     
     func testLoadGoals() throws {
         let store: DataStore = DataStore()
-        let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
         store.saveGoals()
         
+        let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             
             store.goals = []
-            let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
             store.loadGoals()
             
+            let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                
                 assert(!store.goals.isEmpty, "Failed to load goals from file")
                 loadExpectation.fulfill()
             })
@@ -36,11 +37,11 @@ final class DataStoreTest: XCTestCase {
     func testSaveGoals() throws {
         let store: DataStore = DataStore()
         store.goals.append(Goal())
-        
-        let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
         store.saveGoals()
         
+        let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            
             let store2: DataStore = DataStore()
             store2.loadGoals()
             
