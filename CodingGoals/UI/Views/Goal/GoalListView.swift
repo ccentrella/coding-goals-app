@@ -24,7 +24,7 @@ struct GoalListView: View {
         NavigationStack(path: $path) {
             AnyView(
                 List {
-                    GoalListAlert()
+                    GoalListAlert(path: $path)
                     GoalListTodo()
                     GoalListCompleted()
                 }

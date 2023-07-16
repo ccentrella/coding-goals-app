@@ -12,6 +12,7 @@ import SwiftUI
 struct GoalListAlert: View {
     
     @EnvironmentObject var store: DataStore
+    @Binding var path: [Goal]
     var overdueGoals: [Goal] {
         store.goals.filter({ goal in
             goal.status == .overdue && goal.notifications.showAlertBanner
@@ -32,7 +33,7 @@ struct GoalListAlert: View {
         if !overdueGoals.isEmpty {
             Section {
                 if overdueGoals.count == 1 {
-                    AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, invert: true)
+                    AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(overdueGoals.first!) }, invert: true)
                         .padding()
                 }
                 else {
@@ -49,7 +50,7 @@ struct GoalListAlert: View {
                         .padding()
                 }
                 else {
-                    AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", invert: true)
+                    AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", actionText: "View Goal", onClick: { path.append(upcomingGoals.first!) }, invert: true)
                         .padding()
                     GoalList(goals: upcomingGoals)
                 }
@@ -58,8 +59,8 @@ struct GoalListAlert: View {
         else if !recentlyCompletedGoals.isEmpty {
             Section {
                 if recentlyCompletedGoals.count == 1 {
-                    CongratsBanner(heading: "Congratulations on completing your first goal",
-                                   description: recentlyCompletedGoals.first!.friendlyDescription, invert: true)
+                    CongratsBanner(heading: "Goal Complete",
+                                   description: recentlyCompletedGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(recentlyCompletedGoals.first!) }, invert: true)
                         .padding()
                 }
                 else {
@@ -75,7 +76,7 @@ struct GoalListAlert: View {
 struct GoalListAlert_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
-            GoalListAlert()
+            GoalListAlert(path: Binding.constant([]))
                 .environmentObject(DataStore())
         }
     }
