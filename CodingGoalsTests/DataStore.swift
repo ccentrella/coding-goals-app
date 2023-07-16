@@ -14,47 +14,39 @@ final class DataStoreTest: XCTestCase {
     
     func testLoadGoals() throws {
         let store: DataStore = DataStore()
-        store.saveGoals()
-        
         let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            
-            store.goals = []
-            store.loadGoals()
-            
-            let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                
-                assert(!store.goals.isEmpty, "Failed to load goals from file")
-                loadExpectation.fulfill()
-            })
-            
+        store.saveGoals(completion: { _ in
             saveExpectation.fulfill()
         })
-        wait(for: [saveExpectation], timeout: 4)
+        
+        wait(for: [saveExpectation], timeout: 5)
+        let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
+        store.goals = []
+        store.loadGoals(completion: { _ in
+            loadExpectation.fulfill()
+        })
+        
+        wait(for: [loadExpectation], timeout: 5)
+        assert(!store.goals.isEmpty, "Failed to load goals from file")
     }
     
     func testSaveGoals() throws {
         let store: DataStore = DataStore()
-        store.goals.append(Goal())
-        store.saveGoals()
-        
         let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            
-            let store2: DataStore = DataStore()
-            store2.loadGoals()
-            
-            let loadExpectation = XCTestExpectation(description: "Load file asynchronously")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                
-                assert(store.goals.count == store2.goals.count, "Failed to save goals to file")
-                loadExpectation.fulfill()
-            })
-            
+        store.goals.append(Goal())
+        store.saveGoals(completion: { _ in
             saveExpectation.fulfill()
         })
-        wait(for: [saveExpectation], timeout: 4)
+                        
+        wait(for: [saveExpectation], timeout: 5)
+        let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
+        let store2: DataStore = DataStore()
+        store2.loadGoals(completion: { _ in
+            loadExpectation.fulfill()
+        })
+        
+        wait(for: [loadExpectation], timeout: 5)
+        assert(store.goals.count == store2.goals.count, "Failed to save goals to file")
     }
     
     func testBinding() throws {

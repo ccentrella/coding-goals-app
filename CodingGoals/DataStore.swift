@@ -12,7 +12,7 @@ public final class DataStore: ObservableObject {
 
     @Published var goals: [Goal] = SampleGoals.loadSampleGoals("sampleGoals.json")
     
-    func loadGoals() {
+    func loadGoals(completion: @escaping (Result<[Goal], Error>) -> Void = {_ in }) {
         DataStore.load { result in
             switch (result) {
             case .failure(let error):
@@ -20,14 +20,16 @@ public final class DataStore: ObservableObject {
             case .success(let goals):
                 self.goals = goals
             }
+            completion(result)
         }
     }
     
-    func saveGoals() {
+    func saveGoals(completion: @escaping (Result<Int, Error>) -> Void = {_ in }) {
         DataStore.save(goals: self.goals) { result in
             if case.failure(let error) = result {
                 fatalError(error.localizedDescription)
             }
+            completion(result)
         }
     }
     
