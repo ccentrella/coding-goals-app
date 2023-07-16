@@ -31,14 +31,14 @@ struct GoalListAlert: View {
     var body: some View {
         if !overdueGoals.isEmpty {
             Section {
-                if upcomingGoals.count == 1 {
-                    AlertBanner(heading: "Overdue", description: upcomingGoals.first!.friendlyDescription, invert: true)
+                if overdueGoals.count == 1 {
+                    AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, invert: true)
                         .padding()
                 }
                 else {
                     AlertBanner(heading: "Overdue", description: "You have multiple goals which are overdue.", invert: true)
                         .padding()
-                    GoalList(goals: upcomingGoals)
+                    GoalList(goals: overdueGoals)
                 }
             }
         }
