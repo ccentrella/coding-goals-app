@@ -14,8 +14,8 @@ final class EntriesRemainingTest: XCTestCase {
     func testEntriesRemaining() {
         let store: DataStore = DataStore()
         let goal: Goal = store.goals[0]
-        let entriesRemaining = goal.status.totalEntries - goal.status.entriesCompleted
+        let entriesRemaining = goal.progress.totalEntries - goal.progress.entriesCompleted
         
-        assert(goal.status.entriesRemaining == entriesRemaining)
+        assert(goal.progress.entriesRemaining == entriesRemaining)
     }
 }

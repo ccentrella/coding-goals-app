@@ -23,9 +23,6 @@ struct GoalList: View {
                 })
                 store.goals.remove(atOffsets: offsets)
             }
-            .navigationDestination(for: Goal.self) { goal in
-                GoalDetailView(goal: store.getBinding(goal: goal))
-            }
     }
 }
 

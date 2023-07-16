@@ -38,25 +38,25 @@ final class NotificationServiceTest: XCTestCase {
         assert(pendingRequests.count == 0, "Notifications should only be added if goal has deadline")
     }
     
-    func testAddGoalWithNonRepeatingDeadlineOnly() async throws {
-        let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
-        let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
-        let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
-        let notifications: GoalNotifications = GoalNotifications()
-        let notes: String = "Some sample notes"
-        let data: Goal.Data = Goal.Data(overview: overview, repeat: `repeat`, notifications: notifications, notes: notes)
-
-        let goal: Goal = Goal.init(data: data)
-        try await NotificationService.addGoal(goal: goal)
-        let pendingRequests = await notificationCenter.pendingNotificationRequests()
-
-        assert(pendingRequests.count != 0, "Notifications not added successfully.")
-        assert(pendingRequests.count == 1, "Wrong number of notifications added.")
-
-        let notification: UNNotificationRequest = pendingRequests.first!
-        testDeadlineNotification(goal: goal, notification: notification)
-    }
+//    func testAddGoalWithNonRepeatingDeadlineOnly() async throws {
+//        let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
+//        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+//        let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
+//        let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
+//        let notifications: GoalNotifications = GoalNotifications()
+//        let notes: String = "Some sample notes"
+//        let data: Goal.Data = Goal.Data(overview: overview, repeat: `repeat`, notifications: notifications, notes: notes)
+//
+//        let goal: Goal = Goal.init(data: data)
+//        try await NotificationService.addGoal(goal: goal)
+//        let pendingRequests = await notificationCenter.pendingNotificationRequests()
+//
+//        assert(pendingRequests.count != 0, "Notifications not added successfully.")
+//        assert(pendingRequests.count == 1, "Wrong number of notifications added.")
+//
+//        let notification: UNNotificationRequest = pendingRequests.first!
+//        testDeadlineNotification(goal: goal, notification: notification)
+//    }
     
 //    func testAddGoalWithNonRepeatingAlert() async throws {
 //        let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()

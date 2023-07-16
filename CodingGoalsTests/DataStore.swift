@@ -12,6 +12,11 @@ import SwiftUI
 
 final class DataStoreTest: XCTestCase {
     
+    override func setUp() async throws {
+        let store: DataStore = DataStore()
+        store.saveGoals()
+    }
+    
     func testLoadGoals() throws {
         let store: DataStore = DataStore()
         store.goals = []

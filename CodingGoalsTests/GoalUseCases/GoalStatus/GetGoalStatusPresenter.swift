@@ -15,7 +15,7 @@ final class GetGoalStatusPresenterTest: XCTestCase {
         let store: DataStore = DataStore()
         let goal: Goal = store.goals[0]
         
-        assert(!goal.status.isPercent && goal.status.presenter is DefaultGoalStatusPresenter,
+        assert(!goal.progress.isPercent && goal.progress.presenter is DefaultGoalStatusPresenter,
                "Default goal status presenter not being returned")
     }
     
@@ -23,7 +23,7 @@ final class GetGoalStatusPresenterTest: XCTestCase {
         let store: DataStore = DataStore()
         let goal: Goal = store.goals[1]
         
-        assert(goal.status.isPercent && goal.status.presenter is PercentGoalStatusPresenter,
+        assert(goal.progress.isPercent && goal.progress.presenter is PercentGoalStatusPresenter,
                "Percent goal status presenter not being returned")
     }
     
