@@ -14,17 +14,17 @@ struct GoalListAlert: View {
     @EnvironmentObject var store: DataStore
     var overdueGoals: [Goal] {
         store.goals.filter({ goal in
-            goal.status == .overdue
+            goal.status == .overdue && goal.notifications.showAlertBanner
         })
     }
     var upcomingGoals: [Goal] {
         store.goals.filter({ goal in
-            goal.status == .duesoon
+            goal.status == .duesoon && goal.notifications.showAlertBanner
         })
     }
     var recentlyCompletedGoals: [Goal] {
         store.goals.filter({ goal in
-            goal.status == .recentlyCompleted
+            goal.status == .recentlyCompleted && goal.notifications.showCongratsBanner
         })
     }
 

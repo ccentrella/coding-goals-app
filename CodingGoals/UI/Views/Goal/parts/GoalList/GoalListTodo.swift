@@ -12,7 +12,12 @@ struct GoalListTodo: View {
     @EnvironmentObject var store: DataStore
     var filteredGoals: [Goal] {
         store.goals.filter({ goal in
-            goal.status == .todo
+            let overdue: Bool = goal.status == .overdue && goal.notifications.showAlertBanner
+            let duesoon: Bool = goal.status == .duesoon && goal.notifications.showAlertBanner
+            let recentlyCompleted: Bool = goal.status == .recentlyCompleted && goal.notifications.showCongratsBanner
+            let completed: Bool = goal.status == .completed
+            
+            return !overdue && !duesoon && !recentlyCompleted && !completed
         })
     }
 
