@@ -46,11 +46,11 @@ struct GoalListAlert: View {
         else if !upcomingGoals.isEmpty {
             Section {
                 if upcomingGoals.count == 1 {
-                    AlertBanner(heading: "Upcoming Goal", description: upcomingGoals.first!.friendlyDescription, invert: true)
+                    AlertBanner(heading: "Upcoming Goal", description: upcomingGoals.first!.friendlyDescription, actionText: "View Goal",  onClick: { path.append(upcomingGoals.first!) }, invert: true)
                         .padding()
                 }
                 else {
-                    AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", actionText: "View Goal", onClick: { path.append(upcomingGoals.first!) }, invert: true)
+                    AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", invert: true)
                         .padding()
                     GoalList(goals: upcomingGoals)
                 }
