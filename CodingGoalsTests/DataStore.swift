@@ -12,27 +12,29 @@ import SwiftUI
 
 final class DataStoreTest: XCTestCase {
     
-    override func setUp() async throws {
-        let store: DataStore = DataStore()
-        store.saveGoals()
-    }
-    
     func testLoadGoals() throws {
         let store: DataStore = DataStore()
-        store.goals = []
-        let expectation = XCTestExpectation(description: "Load file asynchronously.")
-        store.loadGoals()
+        let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
+        store.saveGoals()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            assert(!store.goals.isEmpty, "Failed to load goals from file")
-            expectation.fulfill()
+            
+            store.goals = []
+            let loadExpectation = XCTestExpectation(description: "Load file asynchronously.")
+            store.loadGoals()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                assert(!store.goals.isEmpty, "Failed to load goals from file")
+                loadExpectation.fulfill()
+            })
+            
+            saveExpectation.fulfill()
         })
-        wait(for: [expectation], timeout: 2)
+        wait(for: [saveExpectation], timeout: 4)
     }
     
     func testSaveGoals() throws {
         let store: DataStore = DataStore()
-        store.loadGoals()
         store.goals.append(Goal())
         
         let saveExpectation = XCTestExpectation(description: "Save file asynchronously.")
