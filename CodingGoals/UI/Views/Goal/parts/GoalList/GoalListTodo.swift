@@ -22,10 +22,7 @@ struct GoalListTodo: View {
     }
 
     var body: some View {
-        if store.goals.isEmpty {
-            Text("Welcome! Begin by creating a goal.")
-        }
-        else if filteredGoals.count == store.goals.count {
+        if filteredGoals.count == store.goals.count {
             Section {
                 GoalList(goals: filteredGoals)
             }

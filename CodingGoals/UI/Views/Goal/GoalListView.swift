@@ -15,20 +15,35 @@ struct GoalListView: View {
     @State private var data: Goal.Data = Goal.Data()
     
     var body: some View {
-        let goalsWithoutAlert: [Goal] = store.goals.filter({ goal in
-            goal.status == .todo || goal.status == .completed
+        let alertBanner: [Goal] = store.goals.filter({ goal in
+            let overdue: Bool = goal.status == .overdue && goal.notifications.showAlertBanner
+            let duesoon: Bool = goal.status == .duesoon && goal.notifications.showAlertBanner
+            let recentlyCompleted: Bool = goal.status == .recentlyCompleted && goal.notifications.showCongratsBanner
+            return overdue || duesoon || recentlyCompleted
         })
+        let showWelcomeBanner: Bool = store.goals.isEmpty
         let grouped = GroupedListStyle.grouped
         let automatic = DefaultListStyle.automatic
-        let test: any ListStyle = goalsWithoutAlert.count == store.goals.count ? automatic : grouped
+        let listStyle: any ListStyle = alertBanner.count > 0 || showWelcomeBanner ? grouped : automatic
+        
         NavigationStack(path: $path) {
             AnyView(
                 List {
+                    if showWelcomeBanner {
+                        Section {
+                            InfoBanner(heading: "Welcome!", description: "Begin by creating a goal.", actionText: "Create Goal", onClick: {
+                                    data = Goal.Data()
+                                    isPresentingAddView = true
+                            }, invert: true)
+                            .padding(.vertical)
+                        }
+                    }
+                    
                     GoalListAlert(path: $path)
                     GoalListTodo()
                     GoalListCompleted()
                 }
-                .listStyle(test)
+                .listStyle(listStyle)
             )
             .navigationDestination(for: Goal.self) { goal in
                 GoalDetailView(goal: store.getBinding(goal: goal))
