@@ -10,10 +10,9 @@ import SwiftUI
 struct GoalDetailBody: View {
     
     let goal: Goal
-    @Environment(\.notificationPermissionsEnabled) private var notificationsEnabled
     
     var body: some View {
-        VStack {
+        VStack(spacing: 15) {
             HStack(alignment: .top) {
                 if goal.overview.deadline.hasValue {
                     Image(systemName: "clock")
@@ -29,17 +28,15 @@ struct GoalDetailBody: View {
                 Spacer()
             }
             if !goal.notes.isEmpty {
-                HStack {
-                    Text("Notes: \(goal.notes)")
+                HStack(alignment: .top) {
+                    Text("Notes:")
+                    Text(goal.notes)
                     Spacer()
                 }
             }
-            Spacer()
-            if goal.overview.deadline.hasValue && !notificationsEnabled {
-                AlertBanner(heading: "Notifications Disabled", description: "To access full app functionality, enable notifications.", actionText: "Enable Notifications", onClick: { NotificationService.showNotificationSettings() })
-                    .padding(.top, 15)
-            }
         }
+        .font(.callout)
+        .padding(.horizontal)
     }
 }
 

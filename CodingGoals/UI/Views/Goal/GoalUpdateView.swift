@@ -42,6 +42,9 @@ struct GoalUpdateView: View {
                     }
                 }
                 Toggle("Show percent", isOn: $goal.progress.isPercent)
+                if goal.progress.percentCompleted != 1.0 {
+                    Button("Mark As Complete", action: { goal.progress.percentCompleted = 1 })
+                }
             }
             .navigationTitle("Update Progress")
             .navigationBarTitleDisplayMode(.inline)

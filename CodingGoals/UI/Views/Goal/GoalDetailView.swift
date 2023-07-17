@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GoalDetailView: View {
     
+    @Environment(\.notificationPermissionsEnabled) private var notificationsEnabled
     @Binding var goal: Goal
     
     @State private var data = Goal.Data()
@@ -18,18 +19,22 @@ struct GoalDetailView: View {
     let heights = stride(from: 0.25, through: 0.85, by: 0.1).map { fraction in PresentationDetent.fraction(fraction) }
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack {
             GoalDetailIntro(isPresentingUpdateView: $isPresentingUpdateView, goal: goal)
             GoalDetailBody(goal: goal)
             Spacer()
+            if goal.overview.deadline.hasValue && !notificationsEnabled {
+                AlertBanner(heading: "Notifications Disabled", description: "To access full app functionality, enable notifications.", actionText: "Enable Notifications", onClick: { NotificationService.showNotificationSettings() })
+            }
         }
+        .navigationTitle("Explore Goal")
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
                 data = goal.data
             }
         }
-        .navigationTitle("Explore Goal")
+        
         .padding()
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbarBackground(goal.overview.type.getColor(), for: .navigationBar)

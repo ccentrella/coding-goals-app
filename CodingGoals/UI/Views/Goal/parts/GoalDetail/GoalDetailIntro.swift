@@ -15,10 +15,12 @@ struct GoalDetailIntro: View {
     var body: some View {
         VStack (alignment: .leading) {
             OverviewBanner(goal: goal, onClick: { isPresentingUpdateView = true })
-                .padding(.bottom, 20.0)
             Text("Goal: \(goal.friendlyDescription)")
                 .font(.callout)
                 .bold()
+                .padding(.top)
+                .padding(.bottom, 5.0)
+                .padding(.horizontal)
         }
     }
 }

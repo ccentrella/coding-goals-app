@@ -35,7 +35,7 @@ struct CongratsBanner: View {
     var body: some View {
         ZStack {
             VStack(spacing: 10.0) {
-                HStack(alignment:.center, spacing: 20.0) {
+                HStack(alignment: .top, spacing: 20.0) {
                     ZStack {
                         Circle()
                             .frame(height: 60)
@@ -43,18 +43,17 @@ struct CongratsBanner: View {
                             .foregroundColor(background)
                             .imageScale(.large)
                     }
-                    Text(heading)
-                        .font(.title2)
-                        .bold()
-                    Spacer()
-                }
-                HStack {
-                    Text(description)
-                        .font(.callout)
-                        .bold()
-                        .padding(.top, 10.0)
-                        .padding(.bottom, 15.0)
-                    .foregroundColor(text)
+                    VStack(alignment: .leading, spacing: 7.0) {
+                        Text(heading)
+                            .font(.title2)
+                            .bold()
+                        Text(description)
+                            .font(.callout)
+                            .bold()
+                            .padding(.bottom, 25.0)
+                            .foregroundColor(text)
+                    }
+                    .offset(y: 5)
                     Spacer()
                 }
                 if actionText != nil && onClick != nil {

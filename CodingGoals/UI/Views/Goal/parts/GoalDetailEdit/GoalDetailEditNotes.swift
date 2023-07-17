@@ -12,8 +12,8 @@ struct GoalDetailEditNotes: View {
     @Binding var data: Goal.Data
     
     var body: some View {
-        Section {
-            TextField("Notes", text: $data.notes)
+        Section("Notes") {
+            TextEditor(text: $data.notes)
                 .frame(minHeight: 75, alignment: .top)
         }
     }

@@ -36,11 +36,11 @@ struct GoalListAlert: View {
             Section {
                 if overdueGoals.count == 1 {
                     AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(overdueGoals.first!) }, invert: true, critical: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 else {
                     AlertBanner(heading: "Overdue", description: "You have multiple goals which are overdue.", invert: true, critical: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 GoalList(goals: overdueGoals)
             }
@@ -49,11 +49,11 @@ struct GoalListAlert: View {
             Section {
                 if upcomingGoals.count == 1 {
                     AlertBanner(heading: "Upcoming Goal", description: upcomingGoals.first!.friendlyDescription, actionText: "View Goal",  onClick: { path.append(upcomingGoals.first!) }, invert: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 else {
                     AlertBanner(heading: "Upcoming Goals", description: "You have multiple goals due soon.", invert: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 GoalList(goals: upcomingGoals)
             }
@@ -63,11 +63,11 @@ struct GoalListAlert: View {
                 if recentlyCompletedGoals.count == 1 {
                     CongratsBanner(heading: "Goal Complete",
                                    description: recentlyCompletedGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(recentlyCompletedGoals.first!) }, invert: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 else {
                     CongratsBanner(heading: "Great Job!", description: "You have completed multiple goals.", invert: true)
-                        .padding()
+                        .padding(.vertical)
                 }
                 GoalList(goals: recentlyCompletedGoals)
             }
