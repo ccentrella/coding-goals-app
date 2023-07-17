@@ -25,7 +25,7 @@ final class NotificationServiceTest: XCTestCase {
     
     func testAddGoalWithoutDeadline() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: false, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: false, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .everyday)
         let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .onehourbefore,
@@ -42,7 +42,7 @@ final class NotificationServiceTest: XCTestCase {
     
     func testAddGoalWithNonRepeatingDeadlineOnly() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
         let notifications: GoalNotifications = GoalNotifications()
@@ -62,7 +62,7 @@ final class NotificationServiceTest: XCTestCase {
     
     func testAddGoalWithNonRepeatingAlert() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
         let notifications: GoalNotifications = GoalNotifications(remindMe: .none, alert: .fifteenminutesbefore, showAlertBanner: true, showCongratsBanner: true)
@@ -84,7 +84,7 @@ final class NotificationServiceTest: XCTestCase {
 
     func testAddGoalWithNonRepeatingRemindMe() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
         let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .none, showAlertBanner: true, showCongratsBanner: true)
@@ -107,7 +107,7 @@ final class NotificationServiceTest: XCTestCase {
     
     func testAddGoalWithNonRepeatingAlertAndRemindMe() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
         let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .twohoursbefore, showAlertBanner: true, showCongratsBanner: true)
@@ -133,7 +133,7 @@ final class NotificationServiceTest: XCTestCase {
 
     func testAddGoalWithRepeatingAlertAndRemindMe() async throws {
         let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
-        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
+        let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(80000)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .everyday)
         let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .twohoursbefore, showAlertBanner: true, showCongratsBanner: true)
