@@ -11,7 +11,7 @@ struct Goal: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var overview: GoalOverview = GoalOverview() {
         willSet {
-            self.progress.updateTotal(newValue.length)
+            self.progress.updateTotal(oldGoalOverview: self.overview, newGoalOverview: newValue)
         }
     }
     var `repeat`: GoalRepeat = GoalRepeat()

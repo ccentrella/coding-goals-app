@@ -13,7 +13,10 @@ extension GoalProgress {
         self.totalEntries = totalEntries
     }
     
-    mutating func updateTotal(_ newValue: Int) {
-        self.totalEntries = newValue
+    mutating func updateTotal(oldGoalOverview: GoalOverview, newGoalOverview: GoalOverview) {
+        if self.totalEntries == oldGoalOverview.length {
+            self.totalEntries = newGoalOverview.length
+            self.entriesCompleted = min(entriesCompleted, newGoalOverview.length)
+        }
     }
 }
