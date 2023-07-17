@@ -72,7 +72,6 @@ final class NotificationServiceTest: XCTestCase {
         let goal: Goal = Goal.init(data: data)
         try await NotificationService.addGoal(goal: goal)
         let pendingRequests = await notificationCenter.pendingNotificationRequests()
-
         assert(pendingRequests.count != 0, "Notifications not added successfully.")
         assert(pendingRequests.count != 1, "Only one notification was added. Two notifications should have been added, a deadline notification and an alert notification.")
         assert(pendingRequests.count == 2, "Wrong number of notifications added. Two notifications should have been added, a deadline notification and an alert notification.")
@@ -111,7 +110,7 @@ final class NotificationServiceTest: XCTestCase {
         let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .never)
-        let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .none, showAlertBanner: true, showCongratsBanner: true)
+        let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .twohoursbefore, showAlertBanner: true, showCongratsBanner: true)
         let notes: String = "Some sample notes"
         let data: Goal.Data = Goal.Data(overview: overview, repeat: `repeat`, notifications: notifications, notes: notes)
 
@@ -137,7 +136,7 @@ final class NotificationServiceTest: XCTestCase {
         let deadline = NullableDate(hasValue: true, date: Date.now.advanced(by: TimeInterval(60)))
         let overview: GoalOverview = GoalOverview(description: "Test description", type: .apps, length: 5, deadline: deadline)
         let `repeat`: GoalRepeat = GoalRepeat(repeatOption: .everyday)
-        let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .none, showAlertBanner: true, showCongratsBanner: true)
+        let notifications: GoalNotifications = GoalNotifications(remindMe: .fifteenminutesbefore, alert: .twohoursbefore, showAlertBanner: true, showCongratsBanner: true)
         let notes: String = "Some sample notes"
         let data: Goal.Data = Goal.Data(overview: overview, repeat: `repeat`, notifications: notifications, notes: notes)
 

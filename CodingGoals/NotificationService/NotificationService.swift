@@ -7,7 +7,6 @@
 
 import Foundation
 import UserNotifications;
-import EventKit;
 import SwiftUI
 
 class NotificationService {
