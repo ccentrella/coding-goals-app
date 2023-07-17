@@ -7,6 +7,8 @@
 
 // Business Logic: Only one banner will be shown. If any goals are overdue, the overdue banner will be shown. Otherwise, if goals are due soon the upcoming banner will be shown. The congratulations banner has the lowest priority: It will be shown only if the other two conditions are false.
 
+// Because overview banner has highest priority, the overdue items will always be shown. Congratulations banner is not always shown, but items that were recently completed will be shown in the GoalListCompleted component. However, we need to ensure that upcoming items are shown even if the upcoming banner is not.
+
 import SwiftUI
 
 struct GoalListAlert: View {
@@ -33,11 +35,11 @@ struct GoalListAlert: View {
         if !overdueGoals.isEmpty {
             Section {
                 if overdueGoals.count == 1 {
-                    AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(overdueGoals.first!) }, invert: true)
+                    AlertBanner(heading: "Overdue", description: overdueGoals.first!.friendlyDescription, actionText: "View Goal", onClick: { path.append(overdueGoals.first!) }, invert: true, critical: true)
                         .padding()
                 }
                 else {
-                    AlertBanner(heading: "Overdue", description: "You have multiple goals which are overdue.", invert: true)
+                    AlertBanner(heading: "Overdue", description: "You have multiple goals which are overdue.", invert: true, critical: true)
                         .padding()
                 }
                 GoalList(goals: overdueGoals)
@@ -68,6 +70,13 @@ struct GoalListAlert: View {
                         .padding()
                 }
                 GoalList(goals: recentlyCompletedGoals)
+            }
+        }
+        
+        // Show upcoming items if upcoming banner will not be shown
+        if !overdueGoals.isEmpty && !upcomingGoals.isEmpty {
+            Section("Upcoming") {
+                GoalList(goals: upcomingGoals)
             }
         }
     }

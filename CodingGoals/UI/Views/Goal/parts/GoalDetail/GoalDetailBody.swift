@@ -19,6 +19,10 @@ struct GoalDetailBody: View {
                     Image(systemName: "clock")
                     Text("Due \(goal.overview.deadline.date.formatted(date: .complete, time: .shortened))")
                 }
+                else if goal.progress.dateCompleted != nil {
+                    Image(systemName: "party.popper.fill")
+                    Text("Completed \(goal.progress.dateCompleted!.formatted(date: .complete, time: .omitted))")
+                }
                 else {
                     Label("No deadline specified", systemImage: "clock")
                 }
