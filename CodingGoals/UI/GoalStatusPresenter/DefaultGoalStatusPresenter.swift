@@ -19,11 +19,11 @@ class DefaultGoalStatusPresenter: GoalStatusPresenter {
         let verb = goal.overview.type.getVerb().lowercased()
         var message: String
         
-        if goal.progress.percentRemaining > 0.0 {
-            message = "\(entriesRemaining) \(type) to \(verb)"
+        if goal.status == .completed || goal.status == .recentlyCompleted {
+            message = "Complete"
         }
         else {
-            message = "Complete"
+            message = "\(entriesRemaining) \(type) to \(verb)"
         }
         return message
     }

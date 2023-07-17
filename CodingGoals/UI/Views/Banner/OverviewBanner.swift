@@ -74,14 +74,7 @@ struct OverviewBanner: View {
                     Spacer()
                 }
                 HStack {
-                    if goal.progress.percentCompleted < 1.0 {
-                        Gauge(value: goal.progress.percentCompleted) {
-                            Text(goal.progress.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
-                        }
-                        .gaugeStyle(.accessoryCircularCapacity)
-                        .colorScheme(.light)
-                    }
-                    else {
+                    if goal.status == .completed || goal.status == .recentlyCompleted {
                         ZStack {
                             Circle()
                                 .fill(Color(hue: 0.40, saturation: 1, brightness: 0.5))
@@ -91,6 +84,13 @@ struct OverviewBanner: View {
                                 .foregroundColor(.white)
                                 .imageScale(.large)
                         }
+                    }
+                    else {
+                        Gauge(value: goal.progress.percentCompleted) {
+                            Text(goal.progress.percentCompleted.formatted(PercentWithoutCharacterFormatStyle()))
+                        }
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .colorScheme(.light)
                     }
                     Spacer()
                     Button(action: { onClick() }) {
