@@ -98,6 +98,7 @@
 		C30962EB29BD7ADB0005FD3B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C30F36E22A646DD80098113C /* GetGoalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalStatus.swift; sourceTree = "<group>"; };
 		C324FBFE2A64F052007A6086 /* InfoBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBanner.swift; sourceTree = "<group>"; };
+		C324FC012A660FE8007A6086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C32B689229D6746B00E4BBB5 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C334E5B729A984BD00283217 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C334E5B929A9910900283217 /* ShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeExtension.swift; sourceTree = "<group>"; };
@@ -284,6 +285,7 @@
 		C3B92C6229A0632C003A8C74 /* CodingGoals */ = {
 			isa = PBXGroup;
 			children = (
+				C324FC012A660FE8007A6086 /* Info.plist */,
 				C3B92C6929A0632D003A8C74 /* CodingGoals.entitlements */,
 				C3B92C6329A0632C003A8C74 /* CodingGoalsApp.swift */,
 				C3B92C9629A11F50003A8C74 /* DataStore.swift */,
@@ -828,6 +830,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CodingGoals/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Coding Goals";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -868,6 +871,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CodingGoals/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Coding Goals";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
