@@ -32,6 +32,7 @@ struct GoalListView: View {
                     if showWelcomeBanner {
                         Section {
                             InfoBanner(heading: "Welcome!", description: "Begin by creating a goal.", actionText: "Create Goal", onClick: {
+                                    print("First Goal")
                                     data = Goal.Data()
                                     isPresentingAddView = true
                             }, invert: true)
@@ -58,9 +59,11 @@ struct GoalListView: View {
                             data = Goal.Data()
                             isPresentingAddView = true
                         } label: {
-                            Label("New Goal", systemImage: "plus.circle.fill")
-                                .bold()
-                                .labelStyle(.titleAndIcon)
+                            HStack{
+                                Image(systemName: "plus.circle.fill")
+                                Text("New Goal")
+                                    .font(.headline)
+                            }
                         }
                         Spacer()
                     }
